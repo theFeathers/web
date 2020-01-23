@@ -4,8 +4,7 @@
 	"description": "Landing webpage of theFeathers.in",
 	"main": "index.html",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
-		"build": "shx cp node_modules/@2dimensions/flare-js/build/Flare.min.js docs/js/vendor/Flare.min.js"
+		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"repository": {
 		"type": "git",
@@ -19,10 +18,7 @@
 	],
 	"author": "Feathers Studio <@feathersstudio> (https://thefeathers.in)",
 	"license": "MIT",
-	"dependencies": {
-		"@2dimensions/flare-js": "^1.0.0"
-	},
 	"devDependencies": {
-		"shx": "^0.3.2"
+		"shelljs": "^0.8.3"
 	}
 }

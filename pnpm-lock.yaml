@@ -1,15 +1,7 @@
-dependencies:
-  '@2dimensions/flare-js': 1.0.0
 devDependencies:
-  shx: 0.3.2
+  shelljs: 0.8.3
 lockfileVersion: 5.1
 packages:
-  /@2dimensions/flare-js/1.0.0:
-    dependencies:
-      npm: 5.10.0
-    dev: false
-    resolution:
-      integrity: sha512-wG/XjNutgB9V0PVNKm8Amb4pilvQcS/qRJMmRQvIj4chMPXvKHxGi4jr+uwS14z7ZAWfZ/Nayzycy5oPbBo9pw==
   /balanced-match/1.0.0:
     dev: true
     resolution:
@@ -25,10 +17,6 @@ packages:
     dev: true
     resolution:
       integrity: sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=
-  /es6-object-assign/1.1.0:
-    dev: true
-    resolution:
-      integrity: sha1-wsNYJlYkfDnqEHyx5mUrb58kUjw=
   /fs.realpath/1.0.0:
     dev: true
     resolution:
@@ -67,132 +55,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-yJHVQEhyqPLUTgt9B83PXu6W3rx4MvvHvSUvToogpwoGDOUQ+yDrR0HRot+yOCdCO7u4hX3pWft6kWBBcqh0UA==
-  /minimist/1.2.0:
-    dev: true
-    resolution:
-      integrity: sha1-o1AIsg9BOD7sH7kU9M1d95omQoQ=
-  /npm/5.10.0:
-    bundledDependencies:
-      - abbrev
-      - ansi-regex
-      - ansicolors
-      - ansistyles
-      - aproba
-      - archy
-      - byte-size
-      - cacache
-      - call-limit
-      - bluebird
-      - bin-links
-      - chownr
-      - cli-table2
-      - cmd-shim
-      - columnify
-      - config-chain
-      - debuglog
-      - detect-indent
-      - detect-newline
-      - dezalgo
-      - editor
-      - find-npm-prefix
-      - fs-vacuum
-      - fs-write-stream-atomic
-      - gentle-fs
-      - glob
-      - graceful-fs
-      - has-unicode
-      - hosted-git-info
-      - iferr
-      - imurmurhash
-      - inflight
-      - inherits
-      - ini
-      - init-package-json
-      - is-cidr
-      - json-parse-better-errors
-      - JSONStream
-      - lazy-property
-      - libcipm
-      - libnpx
-      - lockfile
-      - lodash._baseindexof
-      - lodash._baseuniq
-      - lodash._bindcallback
-      - lodash._cacheindexof
-      - lodash._createcache
-      - lodash._getnative
-      - lodash.clonedeep
-      - lodash.restparam
-      - lodash.union
-      - lodash.uniq
-      - lodash.without
-      - lru-cache
-      - meant
-      - mkdirp
-      - mississippi
-      - move-concurrently
-      - nopt
-      - normalize-package-data
-      - npm-cache-filename
-      - npm-lifecycle
-      - npm-install-checks
-      - npm-package-arg
-      - npm-packlist
-      - npm-profile
-      - npm-registry-client
-      - npm-user-validate
-      - npmlog
-      - once
-      - opener
-      - osenv
-      - pacote
-      - path-is-inside
-      - promise-inflight
-      - query-string
-      - qrcode-terminal
-      - qw
-      - read
-      - read-cmd-shim
-      - read-installed
-      - read-package-json
-      - read-package-tree
-      - readable-stream
-      - readdir-scoped-modules
-      - request
-      - retry
-      - rimraf
-      - semver
-      - sha
-      - slide
-      - sorted-object
-      - sorted-union-stream
-      - ssri
-      - strip-ansi
-      - tar
-      - text-table
-      - uid-number
-      - umask
-      - unique-filename
-      - unpipe
-      - update-notifier
-      - uuid
-      - validate-npm-package-license
-      - validate-npm-package-name
-      - which
-      - wrappy
-      - write-file-atomic
-      - safe-buffer
-      - worker-farm
-      - tiny-relative-date
-      - cli-columns
-      - node-gyp
-      - npm-audit-report
-      - npm-registry-fetch
-      - lock-verify
-    dev: false
-    hasBin: true
-    resolution:
-      integrity: sha512-lvjvjgR5wG2RJ2uqak1xtZcVAWMwVOzN5HkUlUj/n8rU1f3A0fNn+7HwOzH9Lyf0Ppyu9ApgsEpHczOSnx1cwA==
   /once/1.4.0:
     dependencies:
       wrappy: 1.0.2
@@ -234,21 +96,9 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-fc0BKlAWiLpwZljmOvAOTE/gXawtCoNrP5oaY7KIaQbbyHeQVg01pSEuEGvGh3HEdBU4baCD7wQBwADmM/7f7A==
-  /shx/0.3.2:
-    dependencies:
-      es6-object-assign: 1.1.0
-      minimist: 1.2.0
-      shelljs: 0.8.3
-    dev: true
-    engines:
-      node: '>=4'
-    hasBin: true
-    resolution:
-      integrity: sha512-aS0mWtW3T2sHAenrSrip2XGv39O9dXIFUqxAEWHEOS1ePtGIBavdPJY1kE2IHl14V/4iCbUiNDPGdyYTtmhSoA==
   /wrappy/1.0.2:
     dev: true
     resolution:
       integrity: sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8=
 specifiers:
-  '@2dimensions/flare-js': ^1.0.0
-  shx: ^0.3.2
+  shelljs: ^0.8.3
