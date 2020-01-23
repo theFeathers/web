@@ -1,0 +1,79 @@
+:root {
+	--primary-colour: #e20f37;
+	font-family: "Roboto", Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	color: #fff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	margin: 0;
+	margin-top: 1rem;
+}
+
+a {
+	color: var(--primary-colour);
+	font-weight: 400;
+}
+
+a:hover {
+	cursor: pointer;
+	border-bottom: var(--primary-colour) solid 2px;
+}
+
+html,
+body {
+	width: 100%;
+	min-height: 100%;
+	background-color: #000;
+	overflow-x: hidden;
+	position: relative;
+}
+
+h1 {
+	font-size: 3rem;
+	font-weight: 400;
+}
+
+figure {
+	margin: 0;
+}
+
+.logo {
+	width: 50px;
+	height: 50px;
+}
+
+header {
+	position: absolute;
+	top: 40px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+header,
+main {
+	width: 100%;
+	max-width: 1200px;
+	margin: auto;
+}
+
+section {
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.hero article p {
+	font-weight: 300;
+}
+
+.hero figure img {
+	max-height: 50vh;
+}
