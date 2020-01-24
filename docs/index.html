@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<title>Feathers Studio</title>
+		<link
+			rel="icon"
+			href="/assets/images/logo.svg"
+			type="image/*"
+			sizes="16x16"
+		/>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link href="/style/normalise.css" rel="stylesheet" />
@@ -18,27 +25,10 @@
 				alt="Feathers Studio logo"
 			/>
 		</header>
-		<div class="decorators">
-			<div>
-				<img
-					class="decorator rect"
-					src="/assets/images/rect.svg"
-					alt="left top decorator"
-				/>
-			</div>
-
-			<img
-				class="decorator square"
-				src="/assets/images/square.svg"
-				alt="left top decorator"
-			/>
-			<img
-				class="decorator triangle"
-				src="/assets/images/triangle.svg"
-				alt="left top decorator"
-			/>
-		</div>
-		<ul class="list-style-none vertical-nav">
+		<ul class="nav vertical-nav list-style-none">
+			<li>
+				<a href="#contact">Contact</a>
+			</li>
 			<li>
 				<a href="#whatWeDo">What we do</a>
 			</li>
@@ -46,15 +36,58 @@
 				<a href="#aboutUs">About Us</a>
 			</li>
 			<li>
-				<a href="#home">Home</a>
-			</li>
-			<li>
-				<a href="#contact">Contact</a>
+				<a href="#home" class="active">Home</a>
 			</li>
 		</ul>
-
+		<ul class="nav social-nav list-style-none">
+			<li>
+				<a href="https://www.facebook.com/feathersindia" target="_blank">
+					<img
+						src="/assets/images/facebook.svg"
+						alt="Feathers Facebook Medium"
+					/>
+				</a>
+			</li>
+			<li>
+				<a href="https://instagram.com/feathersstudio" target="_blank">
+					<img
+						src="/assets/images/instagram.svg"
+						alt="Feathers Instagram Medium"
+					/>
+				</a>
+			</li>
+			<li>
+				<a
+					href="https://www.linkedin.com/company/feathersstudio"
+					target="_blank"
+				>
+					<img
+						src="/assets/images/linkedin.svg"
+						alt="Feathers LinkedIn Medium"
+					/>
+				</a>
+			</li>
+		</ul>
 		<main>
 			<section class="hero" id="home">
+				<div class="decorators">
+					<img
+						class="decorator-rect"
+						src="/assets/images/rect.svg"
+						alt="left top decorator"
+					/>
+
+					<img
+						class="decorator-square"
+						src="/assets/images/square.svg"
+						alt="left top decorator"
+					/>
+					<img
+						class="decorator-triangle"
+						src="/assets/images/triangle.svg"
+						alt="left top decorator"
+					/>
+				</div>
 				<article>
 					<h1>Feathers Studio</h1>
 					<p>Media and Branding Agency.</p>
@@ -66,70 +99,33 @@
 							</span>
 						</a>
 					</p>
-					<ul class="list-style-none social-linker">
-						<li>
-							<a href="https://www.facebook.com/feathersindia" target="_blank">
-								<img
-									src="/assets/images/facebook.svg"
-									alt="Feathers Facebook Medium"
-								/>
-							</a>
-						</li>
-						<li>
-							<a href="https://instagram.com/feathersstudio" target="_blank">
-								<img
-									src="/assets/images/instagram.svg"
-									alt="Feathers Instagram Medium"
-								/>
-							</a>
-						</li>
-						<li>
-							<a
-								href="https://www.linkedin.com/company/feathersstudio"
-								target="_blank"
-							>
-								<img
-									src="/assets/images/linkedin.svg"
-									alt="Feathers LinkedIn Medium"
-								/>
-							</a>
-						</li>
-					</ul>
 				</article>
 				<figure>
 					<img src="assets/images/hero-logo.png" />
 				</figure>
 			</section>
-			<section class="hero" id="whatWeDo">
-				<article>
-					<h1>Feathers Studio</h1>
-					<p>Media and Branding Agency. asdf</p>
-					<p><a>What we do 🡒</a></p>
-				</article>
-				<figure>
-					<img src="assets/images/hero-logo.png" />
-				</figure>
-			</section>
+			<section class="hero" id="whatWeDo"></section>
 			<section class="contact" id="contact">
 				<article>
 					<h2>Let's do Something Amazing.</h2>
 					<div class="detail">
 						<div>
 							<div class="title">E-Mail</div>
-							<div class="content">design.bluecube@gmail.com</div>
+							<div class="content">contact@thefeathers.in</div>
 						</div>
 						<div>
 							<div class="title">Phone</div>
-							<div class="content">design.bluecube@gmail.com</div>
+							<div class="content">+91 7845798488</div>
 						</div>
 					</div>
 				</article>
 				<article>
-					<form id="contactForm" class="contactForm" novalidate>
+					<form id="contact-form" class="contact-form" novalidate>
 						<input type="text" id="name" placeholder="Name" />
 						<input type="email" id="name" placeholder="E-Mail" />
 						<input type="text" id="name" placeholder="Phone no" />
-						<input type="text" id="name" placeholder="Service" />
+						<!-- <input type="text" id="name" placeholder="Service" /> -->
+						<textarea placeholder="What's on your mind?"></textarea>
 						<button>Submit</button>
 					</form>
 				</article>

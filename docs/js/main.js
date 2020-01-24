@@ -1,6 +1,19 @@
+const setActiveNav = (oldHash, newHash) =>
+	[
+		[oldHash, "remove"],
+		[newHash, "add"],
+	].forEach(([hash, act]) =>
+		document.querySelector(`a[href*='#${hash}']`).classList[act]("active")
+	);
+
 function hashHandler(e) {
-    document.querySelector("a[href*='#" + e.oldURL.split('#')[1] + "']").classList.remove("current");
-    document.querySelector("a[href*='" + location.hash + "']").classList.add("current");
+	const oldHash = e.oldURL.includes("#") ? e.oldURL.split("#")[1] : "home";
+	const newHash = location.hash ? location.hash.split("#")[1] : "home";
+	setActiveNav(oldHash, newHash);
 }
-  
-window.addEventListener('hashchange', hashHandler, false);
+
+window.addEventListener("load", () => {
+	location.hash && setActiveNav("home", location.hash.split("#")[1], true);
+
+	window.addEventListener("hashchange", hashHandler, false);
+});
