@@ -167,12 +167,7 @@ section {
 .arrow {
 	display: inline-block;
 	transition: transform 0.5s;
-	-webkit-transition: transform 0.5s; /* For Safari 3.1 to 6.0 */
 	transform: translateX(0px);
-}
-
-.hero-link:hover .arrow {
-	transform: translateX(5px);
 }
 
 .arrow-left {
@@ -202,8 +197,18 @@ section {
 	height: 2px;
 	box-shadow: inset 0 0 0 32px;
 	transform: rotate(-45deg);
-	width: 18px;
+	width: 20px;
+	transition: width 0.5s;
 	transform-origin: right top;
+}
+
+.hero-link:hover .arrow {
+	transform: translateX(30px);
+}
+
+.hero-link:hover .arrow-left::before {
+	transition: width 0.5s;
+	width: 35px;
 }
 
 .decorators img {
