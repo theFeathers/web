@@ -10,11 +10,8 @@ const vendor = resolve(root, "docs/js/vendor");
 const fromModule = s => resolve(node_modules, s);
 const toVendor = s => resolve(vendor, s);
 
-const tap = f => x => (f(x), x);
-const log = tap(console.log);
-
 sh.mkdir("-p", vendor);
 
 sh.rm(toVendor("lottie.js"));
 
-sh.cp(log(fromModule("lottie-web/build/player/lottie.js")), log(vendor));
+sh.cp(fromModule("lottie-web/build/player/lottie.js"), vendor);
