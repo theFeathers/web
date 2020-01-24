@@ -158,11 +158,6 @@ section {
 .social-nav a:hover {
 	border-left: 2px solid var(--primary-colour);
 }
-.social-nav img {
-	/* width: 20px;
-	height: 20px;
-	transform: rotate(-90%); */
-}
 
 .arrow {
 	display: inline-block;
@@ -211,23 +206,24 @@ section {
 	width: 35px;
 }
 
+.decorators,
 .decorators img {
 	position: absolute;
 }
 
 .decorator-rect {
-	top: -150px;
+	top: -750px;
 	left: -480px;
 }
 
 .decorator-square {
-	top: -180px;
-	right: -460px;
+	top: -680px;
+	left: 1080px;
 }
 
 .decorator-triangle {
-	bottom: -150px;
-	right: 0px;
+	top: 330px;
+	left: 800px;
 }
 
 .contact article {
