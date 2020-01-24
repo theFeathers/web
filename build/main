@@ -1,1 +1,20 @@
 #!/usr/bin/env node
+
+const sh = require("shelljs");
+const { resolve } = require("path");
+
+const root = resolve(__dirname, "..");
+const node_modules = resolve(root, "node_modules");
+const vendor = resolve(root, "docs/js/vendor");
+
+const fromModule = s => resolve(node_modules, s);
+const toVendor = s => resolve(vendor, s);
+
+const tap = f => x => (f(x), x);
+const log = tap(console.log);
+
+sh.mkdir("-p", vendor);
+
+sh.rm(toVendor("lottie.js"));
+
+sh.cp(log(fromModule("lottie-web/build/player/lottie.js")), log(vendor));
