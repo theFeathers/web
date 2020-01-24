@@ -30,6 +30,10 @@ a:hover {
 	border-bottom: var(--primary-colour) solid 2px;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 html,
 body {
 	width: 100%;
@@ -120,6 +124,6 @@ section {
 	text-decoration: none;
 }
 
-.vertical-nav li a.active {
-	border-bottom: 1px solid var(--primary-colour);
+.vertical-nav li a.active, .current {
+	border-bottom: 2px solid var(--primary-colour);
 }

@@ -4,7 +4,8 @@
 	"description": "Landing webpage of theFeathers.in",
 	"main": "index.html",
 	"scripts": {
-		"build": "build/main"
+		"build": "build/main",
+		"dev": "serve docs"
 	},
 	"repository": {
 		"type": "git",
@@ -19,6 +20,7 @@
 	"author": "Feathers Studio <@feathersstudio> (https://thefeathers.in)",
 	"license": "MIT",
 	"devDependencies": {
+		"serve": "^11.3.0",
 		"shelljs": "^0.8.3"
 	}
 }
