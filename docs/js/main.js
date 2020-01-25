@@ -3,7 +3,7 @@ const setActiveNav = (oldHash, newHash) =>
 		[oldHash, "remove"],
 		[newHash, "add"],
 	].forEach(([hash, act]) =>
-		document.querySelector(`a[href*='#${hash}']`).classList[act]("active")
+		document.querySelector(`a[href*='#${hash}']`).classList[act]("active"),
 	);
 
 function hashHandler(e) {
@@ -16,4 +16,6 @@ window.addEventListener("load", () => {
 	location.hash && setActiveNav("home", location.hash.split("#")[1], true);
 
 	window.addEventListener("hashchange", hashHandler, false);
+
+	// document.querySelectorAll('.service')
 });
