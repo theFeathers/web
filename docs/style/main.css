@@ -81,6 +81,14 @@ figure {
 	display: none !important;
 }
 
+.h-0 {
+	height: 0 !important;
+}
+
+.w-0 {
+	width: 0 !important;
+}
+
 .logo {
 	width: 50px;
 	height: 50px;
@@ -267,7 +275,12 @@ section {
 	cursor: pointer;
 }
 
-.service.activeService h3 {
+.desc-wrapper {
+	align-self: start;
+	margin-top: 200px;
+}
+
+.service.active-service h3 {
 	color: var(--primary-colour);
 }
 
@@ -275,7 +288,7 @@ section {
 	display: none;
 }
 
-.service.activeService [class^="arrow"] {
+.service.active-service [class^="arrow"] {
 	display: inline-block;
 }
 
@@ -292,6 +305,11 @@ section {
 .service p {
 	margin: 0;
 	margin-bottom: 1rem;
+}
+
+.service-desc {
+	overflow: hidden;
+	/* border: 1px solid slateblue; */
 }
 
 .contact article {
@@ -318,7 +336,8 @@ section {
 	font-size: 0.9rem;
 }
 
-.contact-form {
+.contact-form,
+.desc-wrapper {
 	width: 100%;
 	max-width: 400px;
 	float: right;

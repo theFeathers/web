@@ -1,10 +1,10 @@
+const q = document.querySelector.bind(document);
+
 const setActiveNav = (oldHash, newHash) =>
 	[
 		[oldHash, "remove"],
 		[newHash, "add"],
-	].forEach(([hash, act]) =>
-		document.querySelector(`a[href*='#${hash}']`).classList[act]("active"),
-	);
+	].forEach(([hash, act]) => q(`a[href*='#${hash}']`).classList[act]("active"));
 
 function hashHandler(e) {
 	const oldHash = e.oldURL.includes("#") ? e.oldURL.split("#")[1] : "home";
@@ -22,19 +22,72 @@ window.addEventListener("load", () => {
 	document.querySelectorAll("[id^='service']").forEach(item => {
 		item.addEventListener("click", e => handleService(e.currentTarget.id));
 	}, false);
+
+	window.addEventListener("scroll", scrollSpy);
 });
 
 const handleService = toActiveId => {
-	[
-		[activeServiceId, "remove"],
-		[toActiveId, "add"],
-	].forEach(([id, act]) => {
-		document.getElementById(id).classList[act]("activeService");
-		document
-			.getElementById(`service-desc-${id.split("-")[1]}`)
-			.classList[act === "remove" ? "add" : act === "add" && "remove"]("hide");
-	});
-	activeServiceId = toActiveId;
+	const active = q(".active-service");
+	const toActive = q(`#${toActiveId}`);
+	active.classList.remove("active-service");
+	toActive.classList.add("active-service");
+
+	hideService(active.id);
+	setTimeout(showService, 300, toActive.id);
 };
 
-let activeServiceId = "service-1";
+const hideService = id => {
+	const el = q(`#desc-${id}`);
+	el.animate(
+		[
+			// keyframes
+			{ height: `${el.offsetHeight}px` },
+			{ height: "0px" },
+		],
+		{
+			// timing options
+			duration: 300,
+			iterations: 1,
+			easing: "ease-in-out",
+		},
+	);
+	setTimeout(() => el.classList.add("hide"), 300);
+};
+
+const showService = id => {
+	const el = q(`#desc-${id}`);
+	el.classList.remove("hide");
+	el.animate(
+		[
+			// keyframes
+			{ height: "0px" },
+			{ height: `${el.offsetHeight}px` },
+		],
+		{
+			// timing options
+			duration: 300,
+			iterations: 1,
+			easing: "ease-in-out",
+		},
+	);
+};
+
+const scrollSpy = () => {
+	isInViewport(q("#aboutUs")) && alert();
+};
+
+const isInViewport = section => {
+	const pageTopToViewportBottom = window.scrollY + window.innerHeight;
+	const rect = section.getBoundingClientRect();
+
+	let bottomExcess = rect.bottom - pageTopToViewportBottom;
+	if (bottomExcess < 0) bottomExcess = 0;
+	let bottomExcessPercent = (bottomExcess / rect.height) * 100;
+
+	let topExcess = window.scrollY - rect.top;
+	if (topExcess < 0) topExcess = 0;
+	let topExcessPercent = (topExcess / rect.height) * 100;
+
+	if (topExcessPercent + bottomExcessPercent > 20) return false;
+	return true;
+};
