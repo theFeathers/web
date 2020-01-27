@@ -39,6 +39,20 @@ html {
 	position: relative;
 	scroll-behavior: smooth;
 	scroll-snap-type: y mandatory;
+	/*
+		There exists a bug in Firefox that causes main container to
+		shift to left when the scrollbar is clicked.
+
+		::-webkit-scrollbar is a nonstandard pseudoselector that works on
+		webkit browsers (Safari, Chrome, ...). In cosmic convenience, the
+		only standards-compliant browser that implements the `scrollbar-width`
+		rule is Firefox. This rule will hide the scrollbar, but only on
+		Firefox.
+
+		If this issue is no longer reproduceable in a future version,
+		this rule should be removed.
+	*/
+	scrollbar-width: none;
 }
 
 body {
