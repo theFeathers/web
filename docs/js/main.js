@@ -17,5 +17,24 @@ window.addEventListener("load", () => {
 
 	window.addEventListener("hashchange", hashHandler, false);
 
-	// document.querySelectorAll('.service')
+	console.log(document.querySelectorAll("[id^='service']"));
+
+	document.querySelectorAll("[id^='service']").forEach(item => {
+		item.addEventListener("click", e => handleService(e.currentTarget.id));
+	}, false);
 });
+
+const handleService = toActiveId => {
+	[
+		[activeServiceId, "remove"],
+		[toActiveId, "add"],
+	].forEach(([id, act]) => {
+		document.getElementById(id).classList[act]("activeService");
+		document
+			.getElementById(`service-desc-${id.split("-")[1]}`)
+			.classList[act === "remove" ? "add" : act === "add" && "remove"]("hide");
+	});
+	activeServiceId = toActiveId;
+};
+
+let activeServiceId = "service-1";

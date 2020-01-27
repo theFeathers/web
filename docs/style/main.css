@@ -73,6 +73,14 @@ figure {
 	margin: 0;
 }
 
+.show {
+	display: block !important;
+}
+
+.hide {
+	display: none !important;
+}
+
 .logo {
 	width: 50px;
 	height: 50px;
@@ -215,11 +223,13 @@ section {
 	transform: translateY(-50%) rotate(45deg);
 }
 
-.link:hover .arrow-right {
+.link:hover .arrow-right,
+.service:hover .arrow-right {
 	transform: translateX(10px);
 }
 
-.link:hover .arrow-right::before {
+.link:hover .arrow-right::before,
+.service:hover .arrow-right::before {
 	transition: width 0.5s;
 	width: 30px;
 }
@@ -248,6 +258,10 @@ section {
 	display: flex;
 }
 
+.what-we-do article {
+	flex-basis: 33.3%;
+}
+
 .service {
 	margin-bottom: 2rem;
 	cursor: pointer;
@@ -255,6 +269,14 @@ section {
 
 .service.activeService h3 {
 	color: var(--primary-colour);
+}
+
+.service [class^="arrow"] {
+	display: none;
+}
+
+.service.activeService [class^="arrow"] {
+	display: inline-block;
 }
 
 .service h3 {
