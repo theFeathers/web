@@ -9,8 +9,13 @@
 	box-sizing: border-box;
 }
 
-html {
-	width: 100%;
+html,
+body {
+	width: 100vh;
+}
+
+.content {
+	width: 100vw;
 	min-height: 100%;
 	height: 100vh;
 	overflow-x: hidden;
