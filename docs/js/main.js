@@ -73,7 +73,7 @@ const showService = id => {
 };
 
 const scrollSpy = () => {
-	isInViewport(q("#aboutUs")) && alert();
+	// isInViewport(q("#aboutUs")) && alert();
 };
 
 const isInViewport = section => {

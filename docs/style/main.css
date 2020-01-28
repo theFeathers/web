@@ -9,27 +9,6 @@
 	box-sizing: border-box;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-	margin: 0;
-	margin-top: 1rem;
-}
-
-a {
-	color: var(--primary-colour);
-	font-weight: 400;
-}
-
-a:hover,
-button:hover {
-	cursor: pointer;
-}
-
 html {
 	width: 100%;
 	min-height: 100%;
@@ -55,8 +34,15 @@ html {
 	scrollbar-width: none;
 }
 
-body {
-	background-color: #000;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	margin: 0;
+	margin-top: 1rem;
 }
 
 h1 {
@@ -69,29 +55,22 @@ h2 {
 	font-weight: 400;
 }
 
+a {
+	color: var(--primary-colour);
+	font-weight: 400;
+}
+
+a:hover,
+button:hover {
+	cursor: pointer;
+}
+
+body {
+	background-color: #000;
+}
+
 figure {
 	margin: 0;
-}
-
-.show {
-	display: block !important;
-}
-
-.hide {
-	display: none !important;
-}
-
-.h-0 {
-	height: 0 !important;
-}
-
-.w-0 {
-	width: 0 !important;
-}
-
-.logo {
-	width: 50px;
-	height: 50px;
 }
 
 header {
@@ -116,6 +95,27 @@ section {
 	scroll-snap-align: start;
 	scroll-padding-top: 100px;
 	position: relative;
+}
+
+.show {
+	display: block !important;
+}
+
+.hide {
+	display: none !important;
+}
+
+.h-0 {
+	height: 0 !important;
+}
+
+.w-0 {
+	width: 0 !important;
+}
+
+.logo {
+	width: 50px;
+	height: 50px;
 }
 
 .hero article p {
@@ -376,18 +376,30 @@ section {
 	header {
 		padding: 0 2rem;
 		height: 50px;
-		background-color: #000;
+		z-index: 1;
 	}
 	main {
 		padding: 0 2rem;
+		margin-top: 130px;
+	}
+	main > section {
+		min-height: auto;
+		margin-bottom: 1.5rem;
+	}
+	.hero,
+	.what-we-do,
+	.contact {
+		flex-direction: column;
+		align-items: normal;
+	}
+	.hero article {
+		order: 2;
+	}
+	.hero figure {
+		align-self: center;
 	}
 	.contact-form input {
 		margin: 2rem 0;
-	}
-	.what-we-do {
-		flex-direction: column;
-		align-items: normal;
-		margin-top: 130px;
 	}
 	.what-we-do h2 {
 		margin-bottom: 40px;
