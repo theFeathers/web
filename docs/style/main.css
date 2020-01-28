@@ -433,13 +433,11 @@ section {
 		z-index: 1;
 		padding: 0 2rem;
 		bottom: 100%;
+		align-items: flex-end;
 	}
 	.nav-open.nav-panel {
 		bottom: 0%;
 		padding: 2rem;
-	}
-	.nav-closer {
-		margin: 40px 0;
 	}
 	.nav-opener,
 	.nav-closer {
