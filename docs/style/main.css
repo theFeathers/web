@@ -113,6 +113,9 @@ section {
 	width: 0 !important;
 }
 
+.text-right {
+	text-align: right !important;
+}
 .list-style-none {
 	list-style: none;
 	padding: 0;
@@ -131,19 +134,17 @@ section {
 .hero figure img {
 	max-height: 50vh;
 }
-
 .nav {
 	z-index: 900;
 }
 
-.navToggler {
+.nav-opener,
+.nav-closer {
+	cursor: pointer;
 	display: none;
 }
 
 .vertical-nav {
-	list-style: none;
-	padding: 0;
-	margin: 0;
 	width: 100vh;
 	height: 100px;
 	position: fixed;
@@ -163,12 +164,14 @@ section {
 	color: #fff;
 	padding: 0.5rem 0;
 	text-decoration: none;
+	display: inline-block;
+	border-bottom: 2px solid transparent;
 }
 
 .vertical-nav li a:active,
 .vertical-nav li a:hover,
 .active {
-	border-bottom: 2px solid var(--primary-colour);
+	border-bottom: 2px solid var(--primary-colour) !important;
 }
 
 .social-nav {
@@ -183,11 +186,11 @@ section {
 .social-nav a {
 	display: inline-block;
 	padding: 1rem;
-	border-left: 2px solid transparent;
+	border-bottom: 2px solid transparent;
 }
 
 .social-nav a:hover {
-	border-left: 2px solid var(--primary-colour);
+	border-bottom: 2px solid var(--primary-colour);
 }
 
 .arrow-right {
@@ -365,7 +368,14 @@ section {
 	border-radius: 10px;
 }
 
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1400px) and (min-width: 900px) {
+	header,
+	main {
+		max-width: calc(100vw - 18vw);
+	}
+}
+
+@media screen and (max-width: 900px) {
 	html {
 		scroll-snap-type: none;
 	}
@@ -409,7 +419,30 @@ section {
 	.what-we-do h2 {
 		margin-bottom: 40px;
 	}
-	.navToggler {
+	.nav-panel {
+		transition: all 400ms ease-in-out;
+		position: fixed;
+		display: flex;
+		flex-direction: column;
+		top: 0;
+		right: 0;
+		left: 0;
+		overflow-y: hidden;
+		overflow-x: hidden;
+		background-color: #000;
+		z-index: 1;
+		padding: 0 2rem;
+		bottom: 100%;
+	}
+	.nav-open.nav-panel {
+		bottom: 0%;
+		padding: 2rem;
+	}
+	.nav-closer {
+		margin: 40px 0;
+	}
+	.nav-opener,
+	.nav-closer {
 		display: inline-block;
 	}
 	.nav {
@@ -417,13 +450,25 @@ section {
 	}
 	.vertical-nav,
 	.social-nav {
-		align-items: end;
+		align-items: flex-end;
+		width: auto;
+		height: auto;
 	}
 	.vertical-nav {
 		transform: none;
 		flex-direction: column-reverse;
+		margin-top: 50px;
+	}
+	.vertical-nav li {
+		margin-bottom: 1rem;
 	}
 	.social-nav {
+		flex-direction: row;
+		justify-content: end;
+		margin-top: auto;
+		margin-left: auto;
+		bottom: 50px;
+		right: 2rem;
 	}
 	.detail {
 		flex-direction: column;

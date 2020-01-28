@@ -10,21 +10,18 @@ function hashHandler(e) {
 	const oldHash = e.oldURL.includes("#") ? e.oldURL.split("#")[1] : "home";
 	const newHash = location.hash ? location.hash.split("#")[1] : "home";
 	setActiveNav(oldHash, newHash);
+	closeOffscreenNav();
 }
 
-window.addEventListener("load", () => {
-	location.hash && setActiveNav("home", location.hash.split("#")[1], true);
+const openOffscreenNav = () => {
+	q("#nav-panel").classList.add("nav-open");
+	q("html").style.overflowY = "hidden";
+};
 
-	window.addEventListener("hashchange", hashHandler, false);
-
-	console.log(document.querySelectorAll("[id^='service']"));
-
-	document.querySelectorAll("[id^='service']").forEach(item => {
-		item.addEventListener("click", e => handleService(e.currentTarget.id));
-	}, false);
-
-	window.addEventListener("scroll", scrollSpy);
-});
+const closeOffscreenNav = () => {
+	q("#nav-panel").classList.remove("nav-open");
+	q("html").style.overflowY = "auto";
+};
 
 const handleService = toActiveId => {
 	const active = q(".active-service");
@@ -91,3 +88,25 @@ const isInViewport = section => {
 	if (topExcessPercent + bottomExcessPercent > 20) return false;
 	return true;
 };
+
+window.addEventListener("load", () => {
+	location.hash && setActiveNav("home", location.hash.split("#")[1], true);
+
+	window.addEventListener("hashchange", hashHandler, false);
+
+	console.log(document.querySelectorAll("[id^='service']"));
+
+	document.querySelectorAll("[id^='service']").forEach(item => {
+		item.addEventListener("click", e => handleService(e.currentTarget.id));
+	}, false);
+
+	window.addEventListener("scroll", scrollSpy);
+
+	q("#nav-opener").addEventListener("click", openOffscreenNav);
+	q("#nav-closer").addEventListener("click", closeOffscreenNav);
+	window.addEventListener("resize", function() {
+		if (window.innerWidth >= 991) {
+			closeOffscreenNav();
+		}
+	});
+});
