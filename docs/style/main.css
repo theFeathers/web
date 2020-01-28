@@ -14,7 +14,7 @@ body {
 	width: 100vh;
 }
 
-.content {
+#app {
 	width: 100vw;
 	min-height: 100%;
 	height: 100vh;
@@ -266,10 +266,6 @@ section {
 	left: 800px;
 }
 
-.what-we-do {
-	display: flex;
-}
-
 .what-we-do article {
 	flex-basis: 33.3%;
 }
@@ -425,7 +421,7 @@ section {
 		margin-bottom: 40px;
 	}
 	.nav-panel {
-		transition: all 400ms ease-in-out;
+		transition: all 100ms ease-in-out;
 		position: fixed;
 		display: flex;
 		flex-direction: column;
