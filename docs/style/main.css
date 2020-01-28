@@ -113,6 +113,12 @@ section {
 	width: 0 !important;
 }
 
+.list-style-none {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
 .logo {
 	width: 50px;
 	height: 50px;
@@ -126,22 +132,12 @@ section {
 	max-height: 50vh;
 }
 
-.navbar {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100px;
-	height: 100%;
-	overflow: hidden;
-}
-.list-style-none {
-	list-style: none;
-	padding: 0;
-	margin: 0;
-}
-
 .nav {
 	z-index: 900;
+}
+
+.navToggler {
+	display: none;
 }
 
 .vertical-nav {
@@ -319,7 +315,7 @@ section {
 }
 
 .detail {
-	margin: 1.5rem 0;
+	margin: 2rem 0;
 	display: flex;
 	justify-content: space-between;
 	color: #666;
@@ -377,6 +373,8 @@ section {
 		padding: 0 2rem;
 		height: 50px;
 		z-index: 1;
+		display: flex;
+		justify-content: space-between;
 	}
 	main {
 		padding: 0 2rem;
@@ -398,11 +396,40 @@ section {
 	.hero figure {
 		align-self: center;
 	}
+	.contact article {
+		width: 100%;
+	}
+	.contact-form {
+		float: unset;
+		max-width: none;
+	}
 	.contact-form input {
 		margin: 2rem 0;
 	}
 	.what-we-do h2 {
 		margin-bottom: 40px;
+	}
+	.navToggler {
+		display: inline-block;
+	}
+	.nav {
+		position: static;
+	}
+	.vertical-nav,
+	.social-nav {
+		align-items: end;
+	}
+	.vertical-nav {
+		transform: none;
+		flex-direction: column-reverse;
+	}
+	.social-nav {
+	}
+	.detail {
+		flex-direction: column;
+	}
+	.detail > div:not(:last-child) {
+		margin-bottom: 1.5rem;
 	}
 }
 
