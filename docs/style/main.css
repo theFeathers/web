@@ -276,8 +276,10 @@ section {
 }
 
 .desc-wrapper {
-	align-self: start;
-	margin-top: 200px;
+	align-self: flex-start;
+	margin-top: calc(((100vh - 621.9px) / 2) + 100.3px);
+	max-height: 421.3px;
+	overflow-y: auto;
 }
 
 .service.active-service h3 {
@@ -336,8 +338,7 @@ section {
 	font-size: 0.9rem;
 }
 
-.contact-form,
-.desc-wrapper {
+.contact-form {
 	width: 100%;
 	max-width: 400px;
 	float: right;
@@ -369,11 +370,27 @@ section {
 }
 
 @media screen and (max-width: 991px) {
+	html {
+		scroll-snap-type: none;
+	}
+	header {
+		padding: 0 2rem;
+		height: 50px;
+		background-color: #000;
+	}
 	main {
 		padding: 0 2rem;
 	}
 	.contact-form input {
 		margin: 2rem 0;
+	}
+	.what-we-do {
+		flex-direction: column;
+		align-items: normal;
+		margin-top: 130px;
+	}
+	.what-we-do h2 {
+		margin-bottom: 40px;
 	}
 }
 
