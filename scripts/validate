@@ -1,0 +1,65 @@
+#!/usr/bin/env node
+
+const { resolve } = require("path");
+const { readFileSync } = require("fs");
+
+const axios = require("axios");
+const chalk = require("chalk");
+const strip = require("strip-ansi");
+
+const api = "https://validator.w3.org/nu/?out=json&parser=html5";
+
+const [, , ...sources] = process.argv;
+const cwd = process.cwd();
+
+const getLines = (start, end) =>
+	String(start).padStart(3, " ") + ":" + String(end).padEnd(3, " ");
+
+const chunk = (arr, size) =>
+	Array.from({ length: Math.ceil(arr.length / size) }, (v, i) =>
+		arr.slice(i * size, i * size + size),
+	);
+
+const preprocess = (head, message) => {
+	const rest = strip(head).length;
+	return [head, chunk(message, 80 - rest).join("\n" + " ".repeat(rest))].join(
+		"",
+	);
+};
+
+(async function main() {
+	for (const source of sources) {
+		const resolved = resolve(cwd, source);
+		const file = readFileSync(resolved, "utf-8");
+
+		console.log(chalk.underline.cyan(source), "\n");
+
+		await axios
+			.post(api, file, {
+				headers: {
+					"Content-Type": "text/html, charset-utf8",
+				},
+			})
+			.then(res => res.data)
+			.then(res => {
+				let warns = 0;
+				let errors = 0;
+				for (const m of res.messages) {
+					m.type === "error" ? ++errors : ++warns;
+					const lines = m.firstLine
+						? getLines(m.firstLine, m.firstColumn)
+						: " ".repeat(7);
+					const type =
+						m.type === "error" ? chalk.red("error") : chalk.yellow("warn ");
+					const out = preprocess(`${chalk.cyan(lines)} ${type}  `, m.message);
+					console.log(out, "\n");
+				}
+				console.warn(`errors: ${errors} warns: ${warns}`);
+				if (errors) process.exitCode = 1;
+			})
+			.catch(err => {
+				process.exitCode = 1;
+				console.error(err.message);
+			});
+	}
+})();

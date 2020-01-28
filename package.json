@@ -4,7 +4,8 @@
 	"description": "Landing webpage of theFeathers.in",
 	"main": "index.html",
 	"scripts": {
-		"build": "build/main",
+		"build": "node scripts/build",
+		"validate": "node scripts/validate docs/index.html",
 		"dev": "serve docs"
 	},
 	"repository": {
@@ -20,10 +21,14 @@
 	"author": "Feathers Studio <@feathersstudio> (https://thefeathers.in)",
 	"license": "MIT",
 	"devDependencies": {
+		"axios": "^0.19.2",
+		"chalk": "^3.0.0",
 		"serve": "^11.3.0",
-		"shelljs": "^0.8.3"
+		"shelljs": "^0.8.3",
+		"strip-ansi": "^6.0.0"
 	},
 	"dependencies": {
-		"lottie-web": "^5.6.2"
+		"lottie-web": "^5.6.2",
+		"vy": "^0.0.1"
 	}
 }

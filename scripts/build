@@ -12,6 +12,6 @@ const toVendor = s => resolve(vendor, s);
 
 sh.mkdir("-p", vendor);
 
-sh.rm(toVendor("lottie.js"));
+sh.rm("-rf", toVendor("lottie.js"));
 
 sh.cp(fromModule("lottie-web/build/player/lottie.js"), vendor);
