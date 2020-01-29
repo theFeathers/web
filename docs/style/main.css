@@ -283,6 +283,22 @@ section {
 	left: 800px;
 }
 
+.about-us .article:nth-child(1) {
+	flex: 1;
+}
+
+.about-us .article:nth-child(2) {
+	flex: 3;
+}
+
+.dashboard-wrapper {
+	max-height: 80vh;
+}
+
+.dashboard-wrapper .dashboard-img {
+	height: 100%;
+}
+
 .what-we-do div.article {
 	flex-basis: 33.3%;
 }
