@@ -176,7 +176,7 @@ section {
 
 .vertical-nav li a:active,
 .vertical-nav li a:hover,
-.active {
+.main-nav-active-item {
 	border-bottom: 2px solid var(--primary-colour) !important;
 }
 
