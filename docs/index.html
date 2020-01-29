@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="EN">
 	<head>
 		<title>Feathers Studio</title>
 		<meta charset="UTF-8" />
@@ -27,7 +27,7 @@
 			<img
 				class="nav-opener"
 				src="/assets/images/hamburger.svg"
-				alt="Button shows Navigation Links"
+				alt="Enable offscreen navigation"
 				id="nav-opener"
 			/>
 		</header>
@@ -35,7 +35,7 @@
 			<img
 				class="nav-closer"
 				src="/assets/images/cross.svg"
-				alt="Button hides Navigation Links"
+				alt="Hide offscreen navigation"
 				id="nav-closer"
 			/>
 			<ul class="nav vertical-nav list-style-none">
@@ -57,7 +57,7 @@
 					<a href="https://www.facebook.com/feathersindia" target="_blank">
 						<img
 							src="/assets/images/facebook.svg"
-							alt="Feathers Facebook Medium"
+							alt="Follow Feathers Studio on Facebook"
 						/>
 					</a>
 				</li>
@@ -65,7 +65,7 @@
 					<a href="https://instagram.com/feathersstudio" target="_blank">
 						<img
 							src="/assets/images/instagram.svg"
-							alt="Feathers Instagram Medium"
+							alt="Follow Feathers Studio on Instagram"
 						/>
 					</a>
 				</li>
@@ -76,7 +76,7 @@
 					>
 						<img
 							src="/assets/images/linkedin.svg"
-							alt="Feathers LinkedIn Medium"
+							alt="Follow Feathers Studio on LinkedIn"
 						/>
 					</a>
 				</li>
@@ -89,21 +89,21 @@
 						<img
 							class="decorator-rect"
 							src="/assets/images/rect.svg"
-							alt="left top decorator"
+							alt="Decoration"
 						/>
 
 						<img
 							class="decorator-square"
 							src="/assets/images/square.svg"
-							alt="left top decorator"
+							alt="Decoration"
 						/>
 						<img
 							class="decorator-triangle"
 							src="/assets/images/triangle.svg"
-							alt="left top decorator"
+							alt="Decoration"
 						/>
 					</div>
-					<article>
+					<div class="article">
 						<h1>Feathers Studio</h1>
 						<p>Media and Branding Agency.</p>
 						<p>
@@ -112,21 +112,24 @@
 								<i class="arrow-right"></i>
 							</a>
 						</p>
-					</article>
+					</div>
 					<figure>
-						<img src="assets/images/hero-logo.png" />
+						<img
+							src="assets/images/hero-logo.png"
+							alt="Feathers Studio's animated logo"
+						/>
 					</figure>
 				</section>
 				<section class="hero" id="aboutUs">
-					<article>
+					<div class="article">
 						<h2>About us</h2>
-					</article>
+					</div>
 				</section>
 				<section class="what-we-do" id="whatWeDo">
-					<article>
+					<div class="article">
 						<h2>What we do</h2>
-					</article>
-					<article>
+					</div>
+					<div class="article">
 						<div class="service active-service" id="service-1">
 							<h3>
 								Web Developement and Design
@@ -169,8 +172,8 @@
 							</h3>
 							<p class="font-sm">Lorem ipsum dolor sit amet,</p>
 						</div>
-					</article>
-					<article class="desc-wrapper">
+					</div>
+					<div class="article desc-wrapper">
 						<div class="service-desc" id="desc-service-1">
 							<h3>
 								Web Developement and Design
@@ -179,8 +182,8 @@
 								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
 								eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
 								enim ad minim veniam, quis nostrud exercitation ullamco laboris
-								nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-								reprehenderit in voluptate velit esse cillum dolore eu fugiat
+								nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+								in reprehenderit in voluptate velit esse cillum dolore eu fugiat
 								nulla pariatur. Excepteur sint occaecat cupidatat non proident,
 								sunt in culpa qui officia deserunt mollit anim id est laborum.
 							</p>
@@ -215,10 +218,10 @@
 							</h3>
 							<p class="font-sm">Lorem ipsum dolor sit amet,</p>
 						</div>
-					</article class="desc-wrapper">
+					</div>
 				</section>
 				<section class="contact" id="contact">
-					<article>
+					<div class="article">
 						<h2>Let's do Something Amazing.</h2>
 						<div class="detail">
 							<div>
@@ -230,17 +233,20 @@
 								<div class="content">+91 7845798488</div>
 							</div>
 						</div>
-					</article>
-					<article>
+					</div>
+					<div class="article">
 						<form id="contact-form" class="contact-form" novalidate>
-							<input type="text" id="name" placeholder="Name" />
-							<input type="email" id="name" placeholder="E-Mail" />
-							<input type="text" id="name" placeholder="Phone no" />
-							<!-- <input type="text" id="name" placeholder="Service" /> -->
-							<textarea placeholder="What's on your mind?"></textarea>
+							<input type="text" id="form-name" placeholder="Name" />
+							<input type="email" id="form-email" placeholder="E-Mail" />
+							<input type="text" id="form-phone" placeholder="Phone no" />
+							<!-- <input type="text" id="form-service" placeholder="Service" /> -->
+							<textarea
+								id="form-description"
+								placeholder="What's on your mind?"
+							></textarea>
 							<button>Submit</button>
 						</form>
-					</article>
+					</div>
 				</section>
 			</main>
 		</div>
