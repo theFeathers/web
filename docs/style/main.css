@@ -58,7 +58,18 @@ h1 {
 
 h2 {
 	font-size: 2rem;
-	font-weight: 400;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: 500;
+}
+
+p {
+	font-weight: 300;
 }
 
 a {
@@ -297,7 +308,6 @@ section {
 
 .service h3 {
 	margin-bottom: 0.75rem;
-	font-weight: 500;
 }
 
 .service h3 + p {
@@ -377,7 +387,16 @@ section {
 	}
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 900px), screen and (max-height: 540px) {
+	h1 {
+		font-size: 2rem;
+	}
+	h2 {
+		font-size: 1.5rem;
+	}
+	h3 {
+		font-size: 1.2rem;
+	}
 	#app {
 		scroll-snap-type: none;
 	}
@@ -395,9 +414,12 @@ section {
 	}
 	main > section {
 		min-height: auto;
-		margin-bottom: 1.5rem;
+		margin-bottom: 2rem;
 	}
-	.hero,
+	.hero {
+		flex-direction: column-reverse;
+		align-items: normal;
+	}
 	.what-we-do,
 	.contact {
 		flex-direction: column;
@@ -405,6 +427,7 @@ section {
 	}
 	.hero div.article {
 		order: 2;
+		margin: 2rem 0;
 	}
 	.hero figure {
 		align-self: center;

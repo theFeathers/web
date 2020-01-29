@@ -148,7 +148,7 @@ window.addEventListener("load", () => {
 		item.addEventListener("click", e => handleService(e.currentTarget.id));
 	}, false);
 
-	q("#app").addEventListener("scroll", debounce(scrollSpy, 100));
+	q("#app").addEventListener("scroll", debounce(scrollSpy, 50));
 
 	q("#nav-opener").addEventListener("click", openOffscreenNav);
 	q("#nav-closer").addEventListener("click", closeOffscreenNav);
