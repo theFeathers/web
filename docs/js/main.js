@@ -37,8 +37,10 @@ const closeOffscreenNav = () => {
 
 const handleService = toActiveId => {
 	if(window.matchMedia('(max-width: 900px)').matches) {
-		q(".desc-wrapper").classList.add("show");
-		q("body").style.backgroundColor = "#111";
+		if(!q(".desc-wrapper").classList.contains("show")) {
+			q(".desc-wrapper").classList.add("show");
+			q("body").style.backgroundColor = "#111";
+		}
 	}
 	const active = q(".active-service");
 	const toActive = q(`#${toActiveId}`);
@@ -144,9 +146,12 @@ const scrollSpy = () => {
 };
 
 window.addEventListener("load", () => {
-	location.hash && setActiveNav(location.hash.split("#")[1]);
-
-	window.addEventListener("hashchange", hashHandler, false);
+	if(location.hash) {
+		setActiveNav(location.hash.split("#")[1]);
+		q(`a[href="${location.hash}"]`).click();
+	}
+	
+	window.addEventListener("hashchange", hashHandler);
 
 	document.querySelectorAll("[id^='service']").forEach(item => {
 		item.addEventListener("click", e => handleService(e.currentTarget.id));
