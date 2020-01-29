@@ -36,6 +36,10 @@ const closeOffscreenNav = () => {
 };
 
 const handleService = toActiveId => {
+	if(window.matchMedia('(max-width: 900px)').matches) {
+		q(".desc-wrapper").classList.add("show");
+		q("body").style.backgroundColor = "#111";
+	}
 	const active = q(".active-service");
 	const toActive = q(`#${toActiveId}`);
 	active.classList.remove("active-service");
@@ -157,4 +161,9 @@ window.addEventListener("load", () => {
 			closeOffscreenNav();
 		}
 	});
+
+	q("#desc-closer").addEventListener("click", () => {
+		q(".desc-wrapper").classList.remove("show");
+		q("body").style.backgroundColor = "#000";
+	})	
 });
