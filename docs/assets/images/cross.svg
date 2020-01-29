@@ -1,3 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="29.472" height="29.82" viewBox="0 0 29.472 29.82">
-  <path id="Union_9" data-name="Union 9" d="M107.2,30.721,98.4,21.229l-9.543,8.629a2.9,2.9,0,0,1-4.3-.405,3.467,3.467,0,0,1,.376-4.631l9.135-8.259L85.632,7.476a3.469,3.469,0,0,1,0-4.648,2.9,2.9,0,0,1,4.314,0l8.809,9.492L108.3,3.691a2.9,2.9,0,0,1,4.3.405,3.467,3.467,0,0,1-.376,4.631l-9.135,8.259,8.432,9.086a3.469,3.469,0,0,1,0,4.648,2.9,2.9,0,0,1-4.315,0Z" transform="translate(-83.84 -1.864)" fill="#fff"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="23.837" height="22.962" viewBox="0 0 23.837 22.962">
+  <g id="Group_303" data-name="Group 303" transform="translate(-6223.73 34.543)">
+    <line id="Line_109" data-name="Line 109" x2="29.297" transform="translate(6225.791 -33.358) rotate(45)" fill="none" stroke="#fff" stroke-width="3"/>
+    <line id="Line_108" data-name="Line 108" x2="29.297" transform="translate(6224.791 -12.767) rotate(-45)" fill="none" stroke="#fff" stroke-width="3"/>
+  </g>
 </svg>

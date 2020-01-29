@@ -395,6 +395,7 @@ section {
 		z-index: 1;
 		display: flex;
 		justify-content: space-between;
+		align-items: center;
 	}
 	main {
 		padding: 0 2rem;
@@ -451,7 +452,12 @@ section {
 	}
 	.nav-opener,
 	.nav-closer {
+		height: 32px;
 		display: inline-block;
+	}
+	.nav-closer {
+		/* to match with the opener's position */
+		margin-top: 9px;
 	}
 	.nav {
 		position: static;

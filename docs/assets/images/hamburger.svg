@@ -1,8 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="33.297" height="26.73" viewBox="0 0 33.297 26.73">
-  <g id="Group_301" data-name="Group 301" transform="translate(-345.5 -41.539)">
-    <line id="Line_95" data-name="Line 95" x2="29.297" transform="translate(347.5 55)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="4"/>
-    <line id="Line_96" data-name="Line 96" x2="15" transform="translate(361.5 66.77)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2"/>
-    <line id="Line_97" data-name="Line 97" x2="19" transform="translate(357.5 66.77)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="3"/>
-    <line id="Line_98" data-name="Line 98" x2="29.297" transform="translate(347.5 43.539)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="4"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <g id="_32" data-name="32" transform="translate(-6326 148)">
+    <line id="Line_107" data-name="Line 107" x2="32" transform="translate(6326 -117.5)" fill="none" stroke="white" stroke-width="3"/>
+    <line id="Line_106" data-name="Line 106" x2="19" transform="translate(6339 -132)" fill="none" stroke="white" stroke-width="3"/>
+    <line id="Line_104" data-name="Line 104" x2="32" transform="translate(6326 -146.5)" fill="none" stroke="white" stroke-width="3"/>
   </g>
 </svg>
