@@ -445,6 +445,11 @@ section {
 	.nav-closer {
 		display: inline-block;
 	}
+	.nav-closer {
+		/* to match with the opener's height and position */
+		height: 32px;
+		margin-top: 9px;
+	}
 	.nav {
 		position: static;
 	}
