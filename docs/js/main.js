@@ -1,4 +1,5 @@
 const q = document.querySelector.bind(document);
+const qAll = document.querySelectorAll.bind(document);
 
 const debounce = (fn, ms = 0) => {
 	let timeoutId;
@@ -36,55 +37,73 @@ const closeOffscreenNav = () => {
 };
 
 const handleService = toActiveId => {
-	if(window.matchMedia('(max-width: 900px)').matches) {
-		if(!q(".desc-wrapper").classList.contains("show")) {
-			q(".desc-wrapper").classList.add("show");
-			q("body").style.backgroundColor = "#111";
-		}
-	}
 	const active = q(".active-service");
 	const toActive = q(`#${toActiveId}`);
-	active.classList.remove("active-service");
+	q(".service-list").classList.remove("hide-active");
+	if (active) active.classList.remove("active-service");
 	toActive.classList.add("active-service");
 
-	hideService(active.id);
-	setTimeout(showService, 300, toActive.id);
+	if (window.matchMedia("(max-width: 900px)").matches) {
+		const fog = q(".fog");
+		q(".desc-wrapper").classList.add("show");
+		fog.classList.remove("hide");
+		setTimeout(() => fog.classList.remove("fade-out"), 10);
+		if (active) hideService(active.id);
+		showService(toActive.id);
+	} else {
+		hideService(active.id, { animate: true });
+		setTimeout(showService, 300, toActive.id, { animate: true });
+	}
 };
 
-const hideService = id => {
+const closeServiceDescription = () => {
+	const fog = q(".fog");
+	q(".desc-wrapper").classList.remove("show");
+	q(".service-list").classList.add("hide-active");
+	fog.classList.add("fade-out");
+	setTimeout(() => fog.classList.add("hide"), 300);
+};
+
+const hideService = (id, { animate } = {}) => {
 	const el = q(`#desc-${id}`);
-	el.animate(
-		[
-			// keyframes
-			{ height: `${el.offsetHeight}px` },
-			{ height: "0px" },
-		],
-		{
-			// timing options
-			duration: 300,
-			iterations: 1,
-			easing: "ease-in-out",
-		},
-	);
-	setTimeout(() => el.classList.add("hide"), 300);
+	if (animate) {
+		el.animate(
+			[
+				// keyframes
+				{ height: `${el.offsetHeight}px` },
+				{ height: "0px" },
+			],
+			{
+				// timing options
+				duration: 300,
+				iterations: 1,
+				easing: "ease-in-out",
+			},
+		);
+		setTimeout(() => el.classList.add("hide"), 300);
+	} else {
+		el.classList.add("hide");
+	}
 };
 
-const showService = id => {
+const showService = (id, { animate } = {}) => {
 	const el = q(`#desc-${id}`);
 	el.classList.remove("hide");
-	el.animate(
-		[
-			// keyframes
-			{ height: "0px" },
-			{ height: `${el.offsetHeight}px` },
-		],
-		{
-			// timing options
-			duration: 300,
-			iterations: 1,
-			easing: "ease-in-out",
-		},
-	);
+	if (animate) {
+		el.animate(
+			[
+				// keyframes
+				{ height: "0px" },
+				{ height: `${el.offsetHeight}px` },
+			],
+			{
+				// timing options
+				duration: 300,
+				iterations: 1,
+				easing: "ease-in-out",
+			},
+		);
+	}
 };
 
 const isInViewport = el => {
@@ -146,16 +165,11 @@ const scrollSpy = () => {
 };
 
 window.addEventListener("load", () => {
-	if(location.hash) {
+	if (location.hash) {
 		setActiveNav(location.hash.split("#")[1]);
-		q(`a[href="${location.hash}"]`).click();
 	}
-	
-	window.addEventListener("hashchange", hashHandler);
 
-	document.querySelectorAll("[id^='service']").forEach(item => {
-		item.addEventListener("click", e => handleService(e.currentTarget.id));
-	}, false);
+	window.addEventListener("hashchange", hashHandler);
 
 	q("#app").addEventListener("scroll", debounce(scrollSpy, 50));
 
@@ -167,8 +181,10 @@ window.addEventListener("load", () => {
 		}
 	});
 
-	q("#desc-closer").addEventListener("click", () => {
-		q(".desc-wrapper").classList.remove("show");
-		q("body").style.backgroundColor = "#000";
-	})	
+	qAll("[id^='service']").forEach(item => {
+		item.addEventListener("click", e => handleService(e.currentTarget.id));
+	}, false);
+
+	q("#desc-closer").addEventListener("click", closeServiceDescription);
+	q(".fog").addEventListener("click", closeServiceDescription);
 });
