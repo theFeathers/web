@@ -164,6 +164,34 @@ const scrollSpy = () => {
 	setActiveNav(scrolledTo);
 };
 
+const range = (start, end, step) => {
+	const array = [];
+	let current = start;
+	while (current <= end) {
+		array.push(current);
+		current += step;
+	}
+	return array;
+};
+
+const mutationCallback = ([
+	menuIcon,
+	menuHighlight,
+	post,
+	icon,
+	activity,
+	activityIcon,
+]) => ([entry]) => {
+	menuIcon.style.transform = `translateX(-${5 * entry.intersectionRatio}%)`;
+	menuHighlight.style.transform = `translateX(-${5 *
+		entry.intersectionRatio}%)`;
+	post.style.transform = `translateX(-${20 * entry.intersectionRatio}%)`;
+	icon.style.transform = `translateX(-${45 * entry.intersectionRatio}%)`;
+	activity.style.transform = `translateX(-${20 * entry.intersectionRatio}%)`;
+	activityIcon.style.transform = `translateX(-${35 *
+		entry.intersectionRatio}%)`;
+};
+
 window.addEventListener("load", () => {
 	if (location.hash) {
 		setActiveNav(location.hash.split("#")[1]);
@@ -192,4 +220,30 @@ window.addEventListener("load", () => {
 	// const square = q(".decorator-square");
 	// const triangle = q(".decorator-triangle");
 	// const vpWidth = window.innerWidth;
+
+	const menuIcon = q("#bg");
+	const menuHighlight = q("#dashboard");
+	const post = q("#post");
+	const postIcon = q("#post-icon");
+	const activity = q("#activity");
+	const activityIcon = q("#activity-icon");
+
+	let options = {
+		rootMargin: "0px",
+		threshold: range(0, 1, 0.01),
+	};
+
+	let observer = new IntersectionObserver(
+		mutationCallback([
+			menuIcon,
+			menuHighlight,
+			post,
+			postIcon,
+			activity,
+			activityIcon,
+		]),
+		options,
+	);
+
+	observer.observe(q("#about-us"));
 });
