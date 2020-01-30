@@ -23,7 +23,7 @@ body {
 	overflow-y: scroll;
 	position: relative;
 	scroll-behavior: smooth;
-	/* scroll-snap-type: y mandatory; */
+	scroll-snap-type: y mandatory;
 	/*
 		There exists a bug in Firefox that causes main container to
 		shift to left when the scrollbar is clicked.

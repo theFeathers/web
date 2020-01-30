@@ -187,4 +187,9 @@ window.addEventListener("load", () => {
 
 	q("#desc-closer").addEventListener("click", closeServiceDescription);
 	q(".fog").addEventListener("click", closeServiceDescription);
+
+	// const rect = q(".decorator-rect");
+	// const square = q(".decorator-square");
+	// const triangle = q(".decorator-triangle");
+	// const vpWidth = window.innerWidth;
 });
