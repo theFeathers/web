@@ -23,7 +23,7 @@ body {
 	overflow-y: scroll;
 	position: relative;
 	scroll-behavior: smooth;
-	scroll-snap-type: y mandatory;
+	/* scroll-snap-type: y mandatory; */
 	/*
 		There exists a bug in Firefox that causes main container to
 		shift to left when the scrollbar is clicked.
@@ -285,18 +285,53 @@ section {
 
 .about-us .article:nth-child(1) {
 	flex: 1;
+	width: 25%;
 }
 
 .about-us .article:nth-child(2) {
 	flex: 3;
+	width: 75%;
 }
 
 .dashboard-wrapper {
-	max-height: 80vh;
+	/* max-height: 80vh; */
+	position: relative;
 }
 
 .dashboard-wrapper .dashboard-img {
 	height: 100%;
+	width: 100%;
+}
+
+.dashboard-wrapper [class$="-img"]:not(.dashboard-img) {
+	position: absolute;
+	/* top: 0;
+	left: 0; */
+}
+
+.dashboard-wrapper .activity-img {
+	transform: scale(0.515);
+	transform-origin: top left;
+	top: 561px;
+	left: 120px;
+}
+
+.dashboard-wrapper .tile-img {
+	transform: scale(0.515);
+	left: 38px;
+	top: 118px;
+}
+
+.dashboard-wrapper .button-1-img {
+	transform: scale(0.515);
+	left: 120px;
+	top: 578px;
+}
+
+.dashboard-wrapper .button-2-img {
+	transform: scale(0.515);
+	left: 222px;
+	top: 277px;
 }
 
 .what-we-do div.article {
