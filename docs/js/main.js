@@ -219,10 +219,18 @@ window.addEventListener("load", () => {
 	q("#desc-closer").addEventListener("click", closeServiceDescription);
 	q(".fog").addEventListener("click", closeServiceDescription);
 
-	// const rect = q(".decorator-rect");
-	// const square = q(".decorator-square");
-	// const triangle = q(".decorator-triangle");
-	// const vpWidth = window.innerWidth;
+	const rect = q(".decorator-rect");
+	const square = q(".decorator-square");
+	const triangle = q(".decorator-triangle");
+
+	const leftGap = window.innerWidth - (q("#home").getBoundingClientRect().width + q("#home").getBoundingClientRect().left);
+	const rectToTranslate = (rect.width + leftGap) - ((rect.width * 30) / 100);
+	rect.style.transform = `translateX(-${rectToTranslate}px)`;
+
+	const rightGap = leftGap; // All <section> are aligned centerly. so gap will be same on left and right sides.
+	const squareToTranslate = q("#home").getBoundingClientRect().width + square.width + rightGap;
+	square.style.transform = `translateX(${squareToTranslate - ((square.width * 50) / 100)}px)`;
+	console.log(square, rightGap, squareToTranslate);
 
 	const menuIcon = q("#bg");
 	const menuHighlight = q("#dashboard");
@@ -249,4 +257,5 @@ window.addEventListener("load", () => {
 	);
 
 	observer.observe(q("#about-us"));
+	
 });

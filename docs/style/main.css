@@ -111,6 +111,8 @@ section {
 	scroll-snap-align: start;
 	/* scroll-padding-top: 100px; */
 	position: relative;
+	border: 1px solid sandybrown;
+
 }
 
 .show {
@@ -272,14 +274,19 @@ section {
 	position: absolute;
 }
 
-.decorator-rect {
-	top: -750px;
-	left: -480px;
+.decorators {
+	top: 0;
+	left: 0;
 }
 
-.decorator-square {
-	top: -680px;
-	left: 1080px;
+/* .decorator-rect {
+	top: -750px;
+	left: -480px;
+} */
+
+.decorator-rect, .decorator-square {
+	top: 0;
+	left: 0;
 }
 
 .decorator-triangle {
