@@ -1,17 +1,18 @@
 #!/usr/bin/env node
 
-const sh = require("shelljs");
+const { writeFileSync } = require("fs");
 const { resolve } = require("path");
 
-const root = resolve(__dirname, "..");
-const node_modules = resolve(root, "node_modules");
-const vendor = resolve(root, "docs/js/vendor");
+// Make Mithril happy
+if (!global.window) {
+	global.window = global.document = global.requestAnimationFrame = undefined;
+}
 
-const fromModule = s => resolve(node_modules, s);
-const toVendor = s => resolve(vendor, s);
+const render = require("mithril-node-render");
+const mithril = require("mithril");
+const template = require("../src/index");
 
-sh.mkdir("-p", vendor);
-
-sh.rm("-rf", toVendor("lottie.js"));
-
-sh.cp(fromModule("lottie-web/build/player/lottie.js"), vendor);
+writeFileSync(
+	resolve(__dirname, "..", "dist/index.html"),
+	render.sync(template),
+);

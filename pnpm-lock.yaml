@@ -1,5 +1,8 @@
 dependencies:
   lottie-web: 5.6.2
+  mithril: 2.0.4
+  mithril-node-render: 3.0.0_mithril@2.0.4
+  mithril-toolset: 0.3.10_mithril@2.0.4
   vy: 0.0.1
 devDependencies:
   axios: 0.19.2
@@ -414,6 +417,27 @@ packages:
     dev: true
     resolution:
       integrity: sha1-o1AIsg9BOD7sH7kU9M1d95omQoQ=
+  /mithril-node-render/3.0.0_mithril@2.0.4:
+    dependencies:
+      mithril: 2.0.4
+    dev: false
+    peerDependencies:
+      mithril: ^2.0.4
+    resolution:
+      integrity: sha512-aerVhZh6LRHHVhlsxAfxwyTa6KRFKzliAM9AmHkxPI8wLFs62NjwIWKbmeYzpNdtZhp8BKwQ6N3WPctX74OiLA==
+  /mithril-toolset/0.3.10_mithril@2.0.4:
+    dependencies:
+      mithril: 2.0.4
+    dev: false
+    peerDependencies:
+      mithril: 2.x.x
+    resolution:
+      integrity: sha512-WE5/Nmx7mPdjpHG9GtHUiv1VIn0DsPQzVrvqOVKG6HcxZ/TeoXGU1Lvv8Up/O6va1rpTSh34/U6lPiA7Y3y13g==
+  /mithril/2.0.4:
+    dev: false
+    hasBin: true
+    resolution:
+      integrity: sha512-mgw+DMZlhMS4PpprF6dl7ZoeZq5GGcAuWnrg5e12MvaGauc4jzWsDZtVGRCktsiQczOEUr2K5teKbE5k44RlOg==
   /ms/2.0.0:
     dev: true
     resolution:
@@ -709,6 +733,9 @@ specifiers:
   axios: ^0.19.2
   chalk: ^3.0.0
   lottie-web: ^5.6.2
+  mithril: ^2.0.4
+  mithril-node-render: ^3.0.0
+  mithril-toolset: ^0.3.10
   serve: ^11.3.0
   shelljs: ^0.8.3
   strip-ansi: ^6.0.0
