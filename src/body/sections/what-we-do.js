@@ -44,7 +44,8 @@ module.exports = section["#what-we-do.what-we-do"](
 	div.article["service-list"](
 		services.map((service, id) =>
 			// first service is active by default
-			div.service[`#service-${id + 1}${id === 0 ? ".active-service" : ""}`](
+			// div.service[`#service-${id + 1}${id === 0 ? ".active-service" : ""}`](
+			div.service[`#service-${id + 1}`](
 				h3(service.name, i["arrow-right"]()),
 				p["font-sm"](service.desc),
 			),

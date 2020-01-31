@@ -193,6 +193,7 @@ const mutationCallback = ([
 };
 
 window.addEventListener("load", () => {
+
 	if (location.hash) {
 		setActiveNav(location.hash.split("#")[1]);
 	}
@@ -212,6 +213,8 @@ window.addEventListener("load", () => {
 	qAll("[id^='service']").forEach(item => {
 		item.addEventListener("click", e => handleService(e.currentTarget.id));
 	}, false);
+	if(window.innerWidth > 900)
+		q("#service-1").classList.add("active-service");
 
 	q("#desc-closer").addEventListener("click", closeServiceDescription);
 	q(".fog").addEventListener("click", closeServiceDescription);
