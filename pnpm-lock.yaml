@@ -1,9 +1,9 @@
 dependencies:
   lottie-web: 5.6.2
+  mapbox-gl: 1.7.0_mapbox-gl@1.7.0
   mithril: 2.0.4
   mithril-node-render: 3.0.0_mithril@2.0.4
   mithril-toolset: 0.3.10_mithril@2.0.4
-  vy: 0.0.1
 devDependencies:
   axios: 0.19.2
   chalk: 3.0.0
@@ -12,6 +12,64 @@ devDependencies:
   strip-ansi: 6.0.0
 lockfileVersion: 5.1
 packages:
+  /@mapbox/geojson-area/0.2.2:
+    dependencies:
+      wgs84: 0.0.0
+    dev: false
+    resolution:
+      integrity: sha1-GNeBSqNr8j+7zDefjiaiKSfevxA=
+  /@mapbox/geojson-rewind/0.4.0:
+    dependencies:
+      '@mapbox/geojson-area': 0.2.2
+      concat-stream: 1.6.2
+      minimist: 1.2.0
+      sharkdown: 0.1.1
+    dev: false
+    hasBin: true
+    resolution:
+      integrity: sha512-b+1uPWBERW4Pet/969BNu61ZPDyH2ilIxBjJDFzxyS9TyszF9UrTQyYIl/G38clux3rtpAGGFSGTCSF/qR6UjA==
+  /@mapbox/geojson-types/1.0.2:
+    dev: false
+    resolution:
+      integrity: sha512-e9EBqHHv3EORHrSfbR9DqecPNn+AmuAoQxV6aL8Xu30bJMJR1o8PZLZzpk1Wq7/NfCbuhmakHTPYRhoqLsXRnw==
+  /@mapbox/jsonlint-lines-primitives/2.0.2:
+    dev: false
+    engines:
+      node: '>= 0.6'
+    resolution:
+      integrity: sha1-zlblOfg1UrWNENZy6k1vya3HsjQ=
+  /@mapbox/mapbox-gl-supported/1.4.1_mapbox-gl@1.7.0:
+    dependencies:
+      mapbox-gl: 1.7.0_mapbox-gl@1.7.0
+    dev: false
+    peerDependencies:
+      mapbox-gl: '>=0.32.1 <2.0.0'
+    resolution:
+      integrity: sha512-yyKza9S6z3ELKuf6w5n6VNUB0Osu6Z93RXPfMHLIlNWohu3KqxewLOq4lMXseYJ92GwkRAxd207Pr/Z98cwmvw==
+  /@mapbox/point-geometry/0.1.0:
+    dev: false
+    resolution:
+      integrity: sha1-ioP5M1x4YO/6Lu7KJUMyqgru2PI=
+  /@mapbox/tiny-sdf/1.1.1:
+    dev: false
+    resolution:
+      integrity: sha512-Ihn1nZcGIswJ5XGbgFAvVumOgWpvIjBX9jiRlIl46uQG9vJOF51ViBYHF95rEZupuyQbEmhLaDPLQlU7fUTsBg==
+  /@mapbox/unitbezier/0.0.0:
+    dev: false
+    resolution:
+      integrity: sha1-FWUb1VOme4WB+zmIEMmK2Go0Uk4=
+  /@mapbox/vector-tile/1.3.1:
+    dependencies:
+      '@mapbox/point-geometry': 0.1.0
+    dev: false
+    resolution:
+      integrity: sha512-MCEddb8u44/xfQ3oD+Srl/tNcQoqTw3goGk2oLsrFxOTc3dUp+kAnby3PvAeeBYSMSjSPD1nd1AJA6W49WnoUw==
+  /@mapbox/whoots-js/3.1.0:
+    dev: false
+    engines:
+      node: '>=6.0.0'
+    resolution:
+      integrity: sha512-Es6WcD0nO5l+2BOQS4uLfNPYQaNDfbot3X1XUoloz+x0mPDS3eeORZJl06HXjwBG1fOGwCRnzK88LMdxKRrd6Q==
   /@types/color-name/1.1.1:
     dev: true
     resolution:
@@ -73,6 +131,10 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-9VGjrMsG1vePxcSweQsN20KY/c4zN0h9fLjqAbwbPfahM3t+NL+M9HC8xeXG2I8pX5NoamTGNuomEUFI7fcUjA==
+  /ansicolors/0.2.1:
+    dev: false
+    resolution:
+      integrity: sha1-vgiVmQl7dKXJxKhKDNvNtivYeu8=
   /arch/2.1.1:
     dev: true
     resolution:
@@ -112,6 +174,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-iCuPHDFgrHX7H2vEI/5xpz07zSHB00TpugqhmYtVmMO6518mCuRMoOYFldEBl0g187ufozdaHgWKcYFb61qGiA==
+  /buffer-from/1.1.1:
+    dev: false
+    resolution:
+      integrity: sha512-MQcXEUbCKtEo7bhqEs6560Hyd4XaovZlO/k9V3hjVUF/zwW7KBVdSK4gIt/bzwS9MbR5qob+F5jusZsb0YQK2A==
   /bytes/3.0.0:
     dev: true
     engines:
@@ -124,6 +190,14 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha1-1UVjW+HjPFQmScaRc+Xeas+uNN0=
+  /cardinal/0.4.4:
+    dependencies:
+      ansicolors: 0.2.1
+      redeyed: 0.4.4
+    dev: false
+    hasBin: true
+    resolution:
+      integrity: sha1-ylu2iltRG5D+k7ms6km97lwyv+I=
   /chalk/2.4.1:
     dependencies:
       ansi-styles: 3.2.1
@@ -206,12 +280,27 @@ packages:
     dev: true
     resolution:
       integrity: sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=
+  /concat-stream/1.6.2:
+    dependencies:
+      buffer-from: 1.1.1
+      inherits: 2.0.4
+      readable-stream: 2.3.7
+      typedarray: 0.0.6
+    dev: false
+    engines:
+      '0': node >= 0.8
+    resolution:
+      integrity: sha512-27HBghJxjiZtIk3Ycvn/4kbJk/1uZuJFfuPEns6LaEvpvG1f0hTea8lilrouyo9mVc2GWdcEZ8OLoGmSADlrCw==
   /content-disposition/0.5.2:
     dev: true
     engines:
       node: '>= 0.6'
     resolution:
       integrity: sha1-DPaLud318r55YcOoUXjLhdunjLQ=
+  /core-util-is/1.0.2:
+    dev: false
+    resolution:
+      integrity: sha1-tf1UIgqivFq1eqtxQMlAdUUDwac=
   /cross-spawn/5.1.0:
     dependencies:
       lru-cache: 4.1.5
@@ -220,6 +309,10 @@ packages:
     dev: true
     resolution:
       integrity: sha1-6L0O/uWPz/b4+UUQoKVUu/ojVEk=
+  /csscolorparser/1.0.3:
+    dev: false
+    resolution:
+      integrity: sha1-s085HupNqPPpgjHizNjfnAQfFxs=
   /debug/2.6.9:
     dependencies:
       ms: 2.0.0
@@ -238,12 +331,23 @@ packages:
       node: '>=4.0.0'
     resolution:
       integrity: sha512-LOHxIOaPYdHlJRtCQfDIVZtfw/ufM8+rVj649RIHzcm/vGwQRXFt6OPqIFWsm2XEMrNIEtWR64sY1LEKD2vAOA==
+  /earcut/2.2.2:
+    dev: false
+    resolution:
+      integrity: sha512-eZoZPPJcUHnfRZ0PjLvx2qBordSiO8ofC3vt+qACLM95u+4DovnbYNpQtJh0DNsWj8RnxrQytD4WA8gj5cRIaQ==
   /escape-string-regexp/1.0.5:
     dev: true
     engines:
       node: '>=0.8.0'
     resolution:
       integrity: sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ=
+  /esprima/1.0.4:
+    dev: false
+    engines:
+      node: '>=0.4.0'
+    hasBin: true
+    resolution:
+      integrity: sha1-n1V+CPw7TSbs6d00+Pv0drYlha0=
   /execa/0.7.0:
     dependencies:
       cross-spawn: 5.1.0
@@ -298,12 +402,20 @@ packages:
     dev: true
     resolution:
       integrity: sha1-FQStJSMVjKpA20onh8sBQRmU6k8=
+  /geojson-vt/3.2.1:
+    dev: false
+    resolution:
+      integrity: sha512-EvGQQi/zPrDA6zr6BnJD/YhwAkBP8nnJ9emh3EnHQKVMfg/MRVtPbMYdgVy/IaEmn4UfagD2a6fafPDL5hbtwg==
   /get-stream/3.0.0:
     dev: true
     engines:
       node: '>=4'
     resolution:
       integrity: sha1-jpQ9E1jcN1VQVOy+LtsFqhdO3hQ=
+  /gl-matrix/3.1.0:
+    dev: false
+    resolution:
+      integrity: sha512-526NA+3EA+ztAQi0IZpSWiM0fyQXIp7IbRvfJ4wS/TjjQD0uv0fVybXwwqqSOlq33UckivI0yMDlVtboWm3k7A==
   /glob/7.1.6:
     dependencies:
       fs.realpath: 1.0.0
@@ -315,6 +427,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-LwaxwyZ72Lk7vZINtNNrywX0ZuLyStrdDtabefZKAY5ZGJhVtgdznluResxNmPitE0SAO+O26sWTHeKSI2wMBA==
+  /grid-index/1.1.0:
+    dev: false
+    resolution:
+      integrity: sha512-HZRwumpOGUrHyxO5bqKZL0B0GlUpwtCAzZ42sgxUPniu33R1LSFH5yrIcBCHjkctCAh3mtWKcKd9J4vDDdeVHA==
   /has-flag/3.0.0:
     dev: true
     engines:
@@ -327,6 +443,10 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-EykJT/Q1KjTWctppgIAgfSO0tKVuZUjhgMr17kqTumMl6Afv3EISleU7qZUzoXDFTAHTDC4NOoG/ZxU3EvlMPQ==
+  /ieee754/1.1.13:
+    dev: false
+    resolution:
+      integrity: sha512-4vf7I2LYV/HaWerSo3XmlMkp5eZ83i+/CDluXi/IGTs/O1sejBNhTtnxzmRZfvOUqj7lZjqHkeTvpgSFDlWZTg==
   /inflight/1.0.6:
     dependencies:
       once: 1.4.0
@@ -335,7 +455,6 @@ packages:
     resolution:
       integrity: sha1-Sb1jMdfQLQwJvJEKEHW6gWW1bfk=
   /inherits/2.0.4:
-    dev: true
     resolution:
       integrity: sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==
   /ini/1.3.5:
@@ -360,6 +479,10 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-EtSj3U5o4Lec6428hBc66A2RykQ=
+  /isarray/1.0.0:
+    dev: false
+    resolution:
+      integrity: sha1-u5NdSFgsuhaMBoNJV6VKPgcSTxE=
   /isexe/2.0.0:
     dev: true
     resolution:
@@ -368,6 +491,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-xbbCH5dCYU5T8LcEhhuh7HJ88HXuW3qsI3Y0zOZFKfZEHcpWiHU/Jxzk629Brsab/mMiHQti9wMP+845RPe3Vg==
+  /kdbush/3.0.0:
+    dev: false
+    resolution:
+      integrity: sha512-hRkd6/XW4HTsA9vjVpY9tuXJYLSlelnkTmVFu4M9/7MIYQtFcHpbugAU7UbOfjOiVSVYl2fqgBuJ32JUmRo5Ew==
   /lottie-web/5.6.2:
     dev: false
     resolution:
@@ -379,6 +506,38 @@ packages:
     dev: true
     resolution:
       integrity: sha512-sWZlbEP2OsHNkXrMl5GYk/jKk70MBng6UU4YI/qGDYbgf6YbP4EvmqISbXCoJiRKs+1bSpFHVgQxvJ17F2li5g==
+  /mapbox-gl/1.7.0_mapbox-gl@1.7.0:
+    dependencies:
+      '@mapbox/geojson-rewind': 0.4.0
+      '@mapbox/geojson-types': 1.0.2
+      '@mapbox/jsonlint-lines-primitives': 2.0.2
+      '@mapbox/mapbox-gl-supported': 1.4.1_mapbox-gl@1.7.0
+      '@mapbox/point-geometry': 0.1.0
+      '@mapbox/tiny-sdf': 1.1.1
+      '@mapbox/unitbezier': 0.0.0
+      '@mapbox/vector-tile': 1.3.1
+      '@mapbox/whoots-js': 3.1.0
+      csscolorparser: 1.0.3
+      earcut: 2.2.2
+      geojson-vt: 3.2.1
+      gl-matrix: 3.1.0
+      grid-index: 1.1.0
+      minimist: 0.0.8
+      murmurhash-js: 1.0.0
+      pbf: 3.2.1
+      potpack: 1.0.1
+      quickselect: 2.0.0
+      rw: 1.3.3
+      supercluster: 7.0.0
+      tinyqueue: 2.0.3
+      vt-pbf: 3.1.1
+    dev: false
+    engines:
+      node: '>=6.4.0'
+    peerDependencies:
+      mapbox-gl: '*'
+    resolution:
+      integrity: sha512-iVZQUdhZzeVCE8VlELo24GfGqhAzjouiJl1K4rcfk9mtyJLCbWHlzGT6H5Bs61A/3NQXsSx54GdJXAWvebtFFg==
   /mime-db/1.33.0:
     dev: true
     engines:
@@ -413,8 +572,15 @@ packages:
     dev: true
     resolution:
       integrity: sha512-yJHVQEhyqPLUTgt9B83PXu6W3rx4MvvHvSUvToogpwoGDOUQ+yDrR0HRot+yOCdCO7u4hX3pWft6kWBBcqh0UA==
+  /minimist/0.0.5:
+    dev: false
+    resolution:
+      integrity: sha1-16oye87PUY+RBqxrjwA/o7zqhWY=
+  /minimist/0.0.8:
+    dev: false
+    resolution:
+      integrity: sha1-hX/Kv8M5fSYluCKCYuhqp6ARsF0=
   /minimist/1.2.0:
-    dev: true
     resolution:
       integrity: sha1-o1AIsg9BOD7sH7kU9M1d95omQoQ=
   /mithril-node-render/3.0.0_mithril@2.0.4:
@@ -442,6 +608,10 @@ packages:
     dev: true
     resolution:
       integrity: sha1-VgiurfwAvmwpAd9fmGF4jeDVl8g=
+  /murmurhash-js/1.0.0:
+    dev: false
+    resolution:
+      integrity: sha1-sGJ44h/Gw3+lMTcysEEry2rhX1E=
   /negotiator/0.6.2:
     dev: true
     engines:
@@ -498,6 +668,26 @@ packages:
     dev: true
     resolution:
       integrity: sha512-gu9bD6Ta5bwGrrU8muHzVOBFFREpp2iRkVfhBJahwJ6p6Xw20SjT0MxLnwkjOibQmGSYhiUnf2FLe7k+jcFmGQ==
+  /pbf/3.2.1:
+    dependencies:
+      ieee754: 1.1.13
+      resolve-protobuf-schema: 2.1.0
+    dev: false
+    hasBin: true
+    resolution:
+      integrity: sha512-ClrV7pNOn7rtmoQVF4TS1vyU0WhYRnP92fzbfF75jAIwpnzdJXf8iTd4CMEqO4yUenH6NDqLiwjqlh6QgZzgLQ==
+  /potpack/1.0.1:
+    dev: false
+    resolution:
+      integrity: sha512-15vItUAbViaYrmaB/Pbw7z6qX2xENbFSTA7Ii4tgbPtasxm5v6ryKhKtL91tpWovDJzTiZqdwzhcFBCwiMVdVw==
+  /process-nextick-args/2.0.1:
+    dev: false
+    resolution:
+      integrity: sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag==
+  /protocol-buffers-schema/3.4.0:
+    dev: false
+    resolution:
+      integrity: sha512-G/2kcamPF2S49W5yaMGdIpkG6+5wZF0fzBteLKgEHjbNzqjZQ85aAs1iJGto31EJaSTkNvHs5IXuHSaTLWBAiA==
   /pseudomap/1.0.2:
     dev: true
     resolution:
@@ -512,6 +702,10 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==
+  /quickselect/2.0.0:
+    dev: false
+    resolution:
+      integrity: sha512-RKJ22hX8mHe3Y6wH/N3wCM6BWtjaxIyyUIkpHOvfFnxdI4yD4tBXEBKSbriGujF6jnSVkJrffuo6vxACiSSxIw==
   /range-parser/1.2.0:
     dev: true
     engines:
@@ -528,6 +722,18 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-y3bGgqKj3QBdxLbLkomlohkvsA8gdAiUQlSBJnBhfn+BPxg4bc62d8TcBW15wavDfgexCgccckhcZvywyQYPOw==
+  /readable-stream/2.3.7:
+    dependencies:
+      core-util-is: 1.0.2
+      inherits: 2.0.4
+      isarray: 1.0.0
+      process-nextick-args: 2.0.1
+      safe-buffer: 5.1.2
+      string_decoder: 1.1.1
+      util-deprecate: 1.0.2
+    dev: false
+    resolution:
+      integrity: sha512-Ebho8K4jIbHAxnuxi7o42OrZgF/ZTNcsZj6nRKyUmkhLFq8CHItp/fy6hQZuZmP/n3yZ9VBUbp4zz/mX8hmYPw==
   /rechoir/0.6.2:
     dependencies:
       resolve: 1.15.0
@@ -536,6 +742,12 @@ packages:
       node: '>= 0.10'
     resolution:
       integrity: sha1-hSBLVNuoLVdC4oyWdW70OvUOM4Q=
+  /redeyed/0.4.4:
+    dependencies:
+      esprima: 1.0.4
+    dev: false
+    resolution:
+      integrity: sha1-N+mQpvKyGyoRwuakj9QTVpjLqX8=
   /registry-auth-token/3.3.2:
     dependencies:
       rc: 1.2.8
@@ -551,14 +763,23 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-PU74cPc93h138M+aOBQyRE4XSUI=
+  /resolve-protobuf-schema/2.1.0:
+    dependencies:
+      protocol-buffers-schema: 3.4.0
+    dev: false
+    resolution:
+      integrity: sha512-kI5ffTiZWmJaS/huM8wZfEMer1eRd7oJQhDuxeCLe3t7N7mX3z94CN0xPxBQxFYQTSNz9T0i+v6inKqSdK8xrQ==
   /resolve/1.15.0:
     dependencies:
       path-parse: 1.0.6
     dev: true
     resolution:
       integrity: sha512-+hTmAldEGE80U2wJJDC1lebb5jWqvTYAfm3YZ1ckk1gBr0MnCqUKlwK1e+anaFljIl+F5tR5IoZcm4ZDA1zMQw==
+  /rw/1.3.3:
+    dev: false
+    resolution:
+      integrity: sha1-P4Yt+pGrdmsUiF700BEkv9oHT7Q=
   /safe-buffer/5.1.2:
-    dev: true
     resolution:
       integrity: sha512-Gd2UZBJDkXlY7GbJxfsE8/nvKkUEU1G38c1siN6QP6a9PT9MmHB8GnpscSmMJSoF8LOIrt8ud/wPtojys4G6+g==
   /safe-buffer/5.2.0:
@@ -593,6 +814,15 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-AU0g50Q1y5EVFX56bl0YX5OtVjUX1N737/Htj93dQGKuHiuLvVB45PD8Muar70W6Kpdlz8aNJfoUqTyAq9EE/A==
+  /sharkdown/0.1.1:
+    dependencies:
+      cardinal: 0.4.4
+      minimist: 0.0.5
+      split: 0.2.10
+    dev: false
+    hasBin: true
+    resolution:
+      integrity: sha512-exwooSpmo5s45lrexgz6Q0rFQM574wYIX3iDZ7RLLqOb7IAoQZu9nxlZODU972g19sR69OIpKP2cpHTzU+PHIg==
   /shebang-command/1.2.0:
     dependencies:
       shebang-regex: 1.0.0
@@ -622,6 +852,12 @@ packages:
     dev: true
     resolution:
       integrity: sha1-tf3AjxKH6hF4Yo5BXiUTK3NkbG0=
+  /split/0.2.10:
+    dependencies:
+      through: 2.3.8
+    dev: false
+    resolution:
+      integrity: sha1-Zwl8YB1pfOE2j0GPBs0gHPBSGlc=
   /string-width/2.1.1:
     dependencies:
       is-fullwidth-code-point: 2.0.0
@@ -631,6 +867,12 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha512-nOqH59deCq9SRHlxq1Aw85Jnt4w6KvLKqWVik6oA9ZklXLNIOlqg4F2yrT1MVaTjAqvVwdfeZ7w7aCvJD7ugkw==
+  /string_decoder/1.1.1:
+    dependencies:
+      safe-buffer: 5.1.2
+    dev: false
+    resolution:
+      integrity: sha512-n/ShnvDi6FHbbVfviro+WojiFzv+s8MPMHBczVePfUpDJLwoLT0ht1l4YwBCbi8pJAveEEdnkHyPyTP/mzRfwg==
   /strip-ansi/4.0.0:
     dependencies:
       ansi-regex: 3.0.0
@@ -659,6 +901,12 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-PFMZQukIwml8DsNEhYwobHygpgo=
+  /supercluster/7.0.0:
+    dependencies:
+      kdbush: 3.0.0
+    dev: false
+    resolution:
+      integrity: sha512-8VuHI8ynylYQj7Qf6PBMWy1PdgsnBiIxujOgc9Z83QvJ8ualIYWNx2iMKyKeC4DZI5ntD9tz/CIwwZvIelixsA==
   /supports-color/5.5.0:
     dependencies:
       has-flag: 3.0.0
@@ -683,6 +931,18 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha1-RYuDiH8oj8Vtb/+/rSYuJmOO+mk=
+  /through/2.3.8:
+    dev: false
+    resolution:
+      integrity: sha1-DdTJ/6q8NXlgsbckEV1+Doai4fU=
+  /tinyqueue/2.0.3:
+    dev: false
+    resolution:
+      integrity: sha512-ppJZNDuKGgxzkHihX8v9v9G5f+18gzaTfrukGrq6ueg0lmH4nqVnA2IPG0AEH3jKEk2GRJCUhDoqpoiw3PHLBA==
+  /typedarray/0.0.6:
+    dev: false
+    resolution:
+      integrity: sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
   /update-check/1.5.2:
     dependencies:
       registry-auth-token: 3.3.2
@@ -696,16 +956,28 @@ packages:
     dev: true
     resolution:
       integrity: sha512-KY9Frmirql91X2Qgjry0Wd4Y+YTdrdZheS8TFwvkbLWf/G5KNJDCh6pKL5OZctEW4+0Baa5idK2ZQuELRwPznQ==
+  /util-deprecate/1.0.2:
+    dev: false
+    resolution:
+      integrity: sha1-RQ1Nyfpw3nMnYvvS1KKJgUGaDM8=
   /vary/1.1.2:
     dev: true
     engines:
       node: '>= 0.8'
     resolution:
       integrity: sha1-IpnwLG3tMNSllhsLn3RSShj2NPw=
-  /vy/0.0.1:
+  /vt-pbf/3.1.1:
+    dependencies:
+      '@mapbox/point-geometry': 0.1.0
+      '@mapbox/vector-tile': 1.3.1
+      pbf: 3.2.1
     dev: false
     resolution:
-      integrity: sha512-ECO8Jdo4AT7wYOcqnWb3dvBqVEqwnefrKXIVrquMg3oiUxB/mEBOwYtQmTEV/s1IwY1BmzxLlmOnvTsYr1JDqA==
+      integrity: sha512-pHjWdrIoxurpmTcbfBWXaPwSmtPAHS105253P1qyEfSTV2HJddqjM+kIHquaT/L6lVJIk9ltTGc0IxR/G47hYA==
+  /wgs84/0.0.0:
+    dev: false
+    resolution:
+      integrity: sha1-NP3FVZF7blfPKigu0ENxDASc3HY=
   /which/1.3.1:
     dependencies:
       isexe: 2.0.0
@@ -733,10 +1005,10 @@ specifiers:
   axios: ^0.19.2
   chalk: ^3.0.0
   lottie-web: ^5.6.2
+  mapbox-gl: ^1.7.0
   mithril: ^2.0.4
   mithril-node-render: ^3.0.0
   mithril-toolset: ^0.3.10
   serve: ^11.3.0
   shelljs: ^0.8.3
   strip-ansi: ^6.0.0
-  vy: ^0.0.1
