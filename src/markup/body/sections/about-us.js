@@ -1,5 +1,5 @@
 const { section, div, h2 } = require("mithril-toolset").elements;
-const svg = require(getPath("src/svg"));
+const svg = require(getPath("src/markup/svg"));
 
 module.exports = section["#about-us.about-us"](
 	div.article(h2("About us")),

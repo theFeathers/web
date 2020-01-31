@@ -1,6 +1,6 @@
 const { resolve } = require("path");
 
-global.getPath = path => resolve(__dirname, "..", path);
+global.getPath = path => resolve(__dirname, "../..", path);
 
 const m = require("mithril");
 const { html } = require("mithril-toolset").elements;
