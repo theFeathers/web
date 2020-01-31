@@ -193,7 +193,6 @@ const mutationCallback = ([
 };
 
 window.addEventListener("load", () => {
-
 	if (location.hash) {
 		setActiveNav(location.hash.split("#")[1]);
 	}
@@ -203,6 +202,9 @@ window.addEventListener("load", () => {
 	q("#app").addEventListener("scroll", debounce(scrollSpy, 50));
 
 	q("#nav-opener").addEventListener("click", openOffscreenNav);
+	qAll("#nav-panel a").forEach(a =>
+		a.addEventListener("click", closeOffscreenNav),
+	);
 	q("#nav-closer").addEventListener("click", closeOffscreenNav);
 	window.addEventListener("resize", function() {
 		if (window.innerWidth >= 991) {
@@ -213,8 +215,7 @@ window.addEventListener("load", () => {
 	qAll("[id^='service']").forEach(item => {
 		item.addEventListener("click", e => handleService(e.currentTarget.id));
 	}, false);
-	if(window.innerWidth > 900)
-		q("#service-1").classList.add("active-service");
+	if (window.innerWidth > 900) q("#service-1").classList.add("active-service");
 
 	q("#desc-closer").addEventListener("click", closeServiceDescription);
 	q(".fog").addEventListener("click", closeServiceDescription);
