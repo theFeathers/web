@@ -5,5 +5,5 @@ mapbox.accessToken =
 
 export const map = new mapbox.Map({
 	container: "contact-map",
-	style: "mapbox://styles/mapbox/streets-v11",
+	style: "mapbox://styles/mkrhere/ck643yd2612t71imrul2gpg3g",
 });
