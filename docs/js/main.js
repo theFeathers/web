@@ -24,7 +24,7 @@
 
 	const mainNavActive = "main-nav-active-item";
 
-	const setActiveNav$1 = hash => {
+	const setActiveNav = hash => {
 		const oldActive = q("." + mainNavActive);
 		const newActive = q(`a[href*='#${hash}']`);
 		if (newActive) {
@@ -45,7 +45,7 @@
 
 	const hashHandler = () => {
 		const newHash = location.hash ? location.hash.split("#")[1] : "home";
-		setActiveNav$1(newHash);
+		setActiveNav(newHash);
 		closeOffscreenNav();
 	};
 
@@ -238,7 +238,7 @@
 	return mapboxgl;
 
 	})));
-
+	//# sourceMappingURL=mapbox-gl.js.map
 	});
 
 	mapboxGl.accessToken =
@@ -253,7 +253,7 @@
 		/* SCROLL & MENU */
 
 		if (location.hash) {
-			setActiveNav$1(location.hash.split("#")[1]);
+			setActiveNav(location.hash.split("#")[1]);
 		}
 
 		window.addEventListener("hashchange", hashHandler);

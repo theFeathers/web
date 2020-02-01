@@ -15,7 +15,7 @@ function serve() {
 			if (!started) {
 				started = true;
 
-				require("child_process").spawn("npm", ["run", "start", "--", "--dev"], {
+				require("child_process").spawn("npm", ["run", "serve"], {
 					stdio: ["ignore", "inherit", "inherit"],
 					shell: true,
 				});
@@ -37,7 +37,4 @@ export default {
 		commonjs(), // commonjs
 		!production && serve(), // serve docs/
 	],
-	watch: {
-		clearScreen: false,
-	},
 };

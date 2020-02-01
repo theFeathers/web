@@ -27,6 +27,7 @@ module.exports = section.contact["#contact"](
 				div(div.title(name), div.content(content)),
 			),
 		),
+		div["#contact-map"](),
 	),
 	div.article(
 		form["#contact-form.contact-form"](

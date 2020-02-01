@@ -10,9 +10,18 @@ if (!global.window) {
 	global.window = global.document = global.requestAnimationFrame = undefined;
 }
 
+const invalidate = o => {
+	for (const k in o) {
+		delete o[k];
+	}
+};
+
 const render = require("mithril-node-render");
 const getTemplate = () => {
-	delete require.cache[require.resolve("../src/markup")];
+	for (const key in require.cache) {
+		if (key.includes("src/markup")) delete require.cache[key];
+	}
+	invalidate(require.cache);
 	return require("../src/markup");
 };
 

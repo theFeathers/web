@@ -1,4 +1,5 @@
 import { q } from "./util";
+import { setActiveNav } from "./nav";
 
 export const isInViewport = el => {
 	const viewport = {
