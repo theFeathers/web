@@ -1,6 +1,7 @@
 dependencies:
   lottie-web: 5.6.2
   mapbox-gl: 1.7.0_mapbox-gl@1.7.0
+  ol: 6.1.1
 devDependencies:
   '@rollup/plugin-commonjs': 11.0.1_rollup@1.31.0
   '@rollup/plugin-node-resolve': 7.0.0_rollup@1.31.0
@@ -75,6 +76,10 @@ packages:
       node: '>=6.0.0'
     resolution:
       integrity: sha512-Es6WcD0nO5l+2BOQS4uLfNPYQaNDfbot3X1XUoloz+x0mPDS3eeORZJl06HXjwBG1fOGwCRnzK88LMdxKRrd6Q==
+  /@openlayers/pepjs/0.5.3:
+    dev: false
+    resolution:
+      integrity: sha512-Bgvi5c14BS0FJWyYWWFstNEnXsB30nK8Jt8hkAAdqr7E0gDdBBWVDglF3Ub19wTxvgJ/CVHyTY6VuCtnyRzglg==
   /@rollup/plugin-commonjs/11.0.1_rollup@1.31.0:
     dependencies:
       '@rollup/pluginutils': 3.0.6_rollup@1.31.0
@@ -844,6 +849,15 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha1-NakjLfo11wZ7TLLd8jV7GHFTbF8=
+  /ol/6.1.1:
+    dependencies:
+      '@openlayers/pepjs': 0.5.3
+      pbf: 3.2.1
+      pixelworks: 1.1.0
+      rbush: 3.0.1
+    dev: false
+    resolution:
+      integrity: sha512-0dL3i3eJqgOpqIjDKEY3grkeQnjAYfV5L/JCxhOu4SxiaizRwFrFgeas6LILRoxKa03jhQFbut2r2bbgcLGQeA==
   /on-headers/1.0.2:
     dev: true
     engines:
@@ -906,6 +920,10 @@ packages:
       node: '>=8.6'
     resolution:
       integrity: sha512-ISBaA8xQNmwELC7eOjqFKMESB2VIqt4PPDD0nsS95b/9dZXvVKOlz9keMSnoGGKcOHXfTvDD6WMaRoSc9UuhRA==
+  /pixelworks/1.1.0:
+    dev: false
+    resolution:
+      integrity: sha1-Hwla1I3Ki/ihyCWOAJIDGkTyLKU=
   /potpack/1.0.1:
     dev: false
     resolution:
@@ -942,6 +960,12 @@ packages:
       node: '>= 0.6'
     resolution:
       integrity: sha1-9JvmtIeJTdxA3MlKMi9hEJLgDV4=
+  /rbush/3.0.1:
+    dependencies:
+      quickselect: 2.0.0
+    dev: false
+    resolution:
+      integrity: sha512-XRaVO0YecOpEuIvbhbpTrZgoiI6xBlz6hnlr6EHhd+0x9ase6EmeN+hdwwUaJvLcsFFQ8iWVF1GAK1yB0BWi0w==
   /rc/1.2.8:
     dependencies:
       deep-extend: 0.6.0
@@ -1295,6 +1319,7 @@ specifiers:
   mithril: ^2.0.4
   mithril-node-render: ^3.0.0
   mithril-toolset: ^0.3.10
+  ol: ^6.1.1
   rollup: ^1.31.0
   serve: ^11.3.0
   shelljs: ^0.8.3

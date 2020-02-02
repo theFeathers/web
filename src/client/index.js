@@ -9,7 +9,7 @@ import {
 import { openServiceDescription, closeServiceDescription } from "./services";
 import { mutationCallback, scrollSpy } from "./scroll";
 
-import { map } from "./map";
+import "./map";
 
 window.addEventListener("load", () => {
 	/* SCROLL & MENU */
