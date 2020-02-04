@@ -1,18 +1,67 @@
-#!/usr/bin/env node
+#!/bin/env node
 
 const { writeFileSync } = require("fs");
 const { resolve } = require("path");
+
+const chokidar = require("chokidar");
 
 // Make Mithril happy
 if (!global.window) {
 	global.window = global.document = global.requestAnimationFrame = undefined;
 }
 
-const render = require("mithril-node-render");
-const mithril = require("mithril");
-const template = require("../src/index");
+const invalidate = o => {
+	for (const k in o) {
+		delete o[k];
+	}
+};
 
-writeFileSync(
-	resolve(__dirname, "..", "docs/index.html"),
-	render.sync(template),
-);
+const render = require("mithril-node-render");
+const getTemplate = () => {
+	for (const key in require.cache) {
+		if (key.includes("src/markup")) delete require.cache[key];
+	}
+	invalidate(require.cache);
+	return require("../src/markup");
+};
+
+const debounce = t => f => {
+	let timeout;
+	return (...args) => {
+		clearTimeout(timeout);
+		timeout = setTimeout(() => f(...args), t);
+	};
+};
+
+const tryCatch = f => {
+	try {
+		f();
+	} catch (e) {
+		console.log(e);
+	}
+};
+
+const bob = ({ watch = true }) => {
+	const build = () => (
+		console.log("Building src/markup..."),
+		tryCatch(() =>
+			writeFileSync(
+				resolve(__dirname, "..", "docs/index.html"),
+				render.sync(getTemplate()),
+			),
+		)
+	);
+
+	if (watch) {
+		console.log("Watching src/markup...");
+		chokidar
+			.watch(resolve(__dirname, "..", "src/markup"))
+			.on("all", debounce(100)(build));
+	} else build();
+};
+
+module.exports = { builder: bob };
+
+if (require.main === module) {
+	module.exports({});
+}

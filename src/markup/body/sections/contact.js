@@ -6,6 +6,7 @@ const {
 	textarea,
 	button,
 	form,
+	img,
 } = require("mithril-toolset").elements;
 
 const contact = [
@@ -27,6 +28,8 @@ module.exports = section.contact["#contact"](
 				div(div.title(name), div.content(content)),
 			),
 		),
+		div["#contact-map"](),
+		// img({ src: "/assets/images/map.png" }),
 	),
 	div.article(
 		form["#contact-form.contact-form"](
