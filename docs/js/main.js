@@ -226,12 +226,22 @@ window.addEventListener("load", () => {
 
 	const leftGap = window.innerWidth - (q("#home").getBoundingClientRect().width + q("#home").getBoundingClientRect().left);
 	const rectToTranslate = (rect.width + leftGap) - ((rect.width * 30) / 100);
+	rect.style.top = `0px`;
+	rect.style.left = `0px`;
 	rect.style.transform = `translateX(-${rectToTranslate}px)`;
 
 	const rightGap = leftGap; // All <section> are aligned centerly. so gap will be same on left and right sides.
-	const squareToTranslate = q("#home").getBoundingClientRect().width + square.width + rightGap;
-	square.style.transform = `translateX(${squareToTranslate - ((square.width * 50) / 100)}px)`;
-	console.log(square, rightGap, squareToTranslate);
+	const squareToTranslate = (q("#home").getBoundingClientRect().width + rightGap)  - ((square.width * 25) / 100);
+	square.style.top = `0px`;
+	square.style.left = `0px`;
+	square.style.transform = `translateX(${squareToTranslate}px)`;
+
+	const triangleToTranslate = q("#home").getBoundingClientRect().height  - ((triangle.height * 50) / 100);
+	triangle.style.top = `100%`;
+	triangle.style.right = `0px`;
+	// triangle.style.left = `auto`;
+	triangle.style.transform = `translateY(${triangleToTranslate}px)`;
+	console.log(triangleToTranslate);
 
 	const menuIcon = q("#bg");
 	const menuHighlight = q("#dashboard");
