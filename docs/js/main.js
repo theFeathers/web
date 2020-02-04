@@ -220,28 +220,43 @@ window.addEventListener("load", () => {
 	q("#desc-closer").addEventListener("click", closeServiceDescription);
 	q(".fog").addEventListener("click", closeServiceDescription);
 
-	const rect = q(".decorator-rect");
-	const square = q(".decorator-square");
-	const triangle = q(".decorator-triangle");
+	const rect = q(".hero .decorator-rect");
+	const square = q(".hero .decorator-square");
+	const heroTriangle = q(".hero .decorator-triangle");
 
-	const leftGap = window.innerWidth - (q("#home").getBoundingClientRect().width + q("#home").getBoundingClientRect().left);
+	const leftGap = window.innerWidth - (q("section").getBoundingClientRect().width + q("section").getBoundingClientRect().left);
+	const rightGap = leftGap; // All <section> are aligned centerly. so gap will be same on left and right sides.
+
 	const rectToTranslate = (rect.width + leftGap) - ((rect.width * 30) / 100);
 	rect.style.top = `0px`;
 	rect.style.left = `0px`;
 	rect.style.transform = `translateX(-${rectToTranslate}px)`;
 
-	const rightGap = leftGap; // All <section> are aligned centerly. so gap will be same on left and right sides.
 	const squareToTranslate = (q("#home").getBoundingClientRect().width + rightGap)  - ((square.width * 25) / 100);
 	square.style.top = `0px`;
 	square.style.left = `0px`;
 	square.style.transform = `translateX(${squareToTranslate}px)`;
 
-	const triangleToTranslate = q("#home").getBoundingClientRect().height  - ((triangle.height * 50) / 100);
-	triangle.style.top = `100%`;
-	triangle.style.right = `0px`;
-	// triangle.style.left = `auto`;
-	triangle.style.transform = `translateY(${triangleToTranslate}px)`;
-	console.log(triangleToTranslate);
+	heroTriangle.style.top = `100%`;
+	heroTriangle.style.right = `0px`;
+	heroTriangle.style.transform = `translateY(-50%)`;
+
+	const aboutUsRect = q(".about-us .decorator-rect");
+	const aboutUsSquare = q(".about-us .decorator-square");
+	const aboutUsTriangle = q(".about-us .decorator-triangle");
+
+	const aboutUsSquareToTranslate = (aboutUsSquare.width + leftGap) - ((aboutUsSquare.width * 30) / 100);
+	aboutUsSquare.style.top = `0px`;
+	aboutUsSquare.style.left = `0px`;
+	aboutUsSquare.style.transform = `translateX(-${aboutUsSquareToTranslate}px)`;
+
+	const aboutUsRectToTranslate = (q("#home").getBoundingClientRect().width + rightGap)  - ((aboutUsRect.width * 25) / 100);
+	aboutUsRect.style.top = `0px`;
+	aboutUsRect.style.left = `0px`;
+	aboutUsRect.style.transform = `translateX(${aboutUsRectToTranslate}px)`;
+
+	aboutUsTriangle.style.top = `100%`;
+	aboutUsTriangle.style.transform = `translateY(-50%) rotate(180deg)`;
 
 	const menuIcon = q("#bg");
 	const menuHighlight = q("#dashboard");
