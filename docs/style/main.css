@@ -111,7 +111,6 @@ section {
 	scroll-snap-align: start;
 	/* scroll-padding-top: 100px; */
 	position: relative;
-	background-color: #000;
 }
 
 .show {
@@ -280,7 +279,7 @@ section {
 	left: 0;
 }
 
-/* .decorator-rect {
+.decorator-rect {
 	top: -750px;
 	left: -480px;
 }
@@ -290,15 +289,10 @@ section {
 	left: 1080px;
 }
 
-/* .decorator-rect, .decorator-square {
-	top: 0;
-	left: 0;
-} */
-
-/* .decorator-triangle {
+.decorator-triangle {
 	top: 330px;
 	left: 800px;
-} */
+}
 
 .about-us div.article:nth-child(1) {
 	flex: 2;
@@ -337,8 +331,14 @@ section {
 
 .desc-wrapper {
 	align-self: flex-start;
-	margin-top: calc(((100vh - 621.9px) / 2) + 100.3px);
-	max-height: 421.3px;
+	/*
+		* To vertically position this element.
+		* 31.2rem - height of services list;
+		* 100vh - 31.2 gives the space on top and bottom
+		* Diving by 2 gives margin on top
+		* Add 5rem: the size of the first item in services list
+	*/
+	margin: calc(((100vh - 31.2rem) / 2) + 5rem) 0;
 	overflow-y: auto;
 }
 
@@ -502,7 +502,7 @@ section {
 	.about-us div.article:nth-child(1) {
 		margin-bottom: 1.5rem;
 	}
-	
+
 	.about-us div.article:nth-child(2) {
 		width: 80%;
 		margin-right: -2rem;

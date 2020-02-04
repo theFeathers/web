@@ -9,6 +9,6 @@
     </filter>
   </defs>
   <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Square)">
-    <path id="Square-2" data-name="Square" d="M0,0H254.82V243.631H0Z" transform="matrix(0.85, 0.53, -0.53, 0.85, 174.44, 45.33)" fill="rgba(0,0,0,0)" stroke="#e20f37" stroke-width="15"/>
+    <path id="Square-2" data-name="Square" d="M0,0H254.82V243.631H0Z" transform="translate(100 100)" fill="rgba(0,0,0,0)" stroke="#e20f37" stroke-width="15"/>
   </g>
 </svg>

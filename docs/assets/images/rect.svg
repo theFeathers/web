@@ -9,6 +9,6 @@
     </filter>
   </defs>
   <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Rect)">
-    <rect id="Rect-2" data-name="Rect" width="204" height="380" transform="matrix(0.89, -0.45, 0.45, 0.89, 45.09, 137.7)" fill="none" stroke="#e20f37" stroke-width="15"/>
+    <rect id="Rect-2" data-name="Rect" width="204" height="380" transform="translate(120 80)" fill="none" stroke="#e20f37" stroke-width="15"/>
   </g>
 </svg>

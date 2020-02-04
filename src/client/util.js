@@ -18,3 +18,19 @@ export const range = (start, end, step) => {
 	}
 	return array;
 };
+
+export const sleep = t => new Promise(r => setTimeout(r, t));
+
+export const awaitLoad = el =>
+	new Promise(r => {
+		let cont = true;
+		(function loop() {
+			requestAnimationFrame(() => {
+				if (!cont) return;
+				if (el.offsetWidth) {
+					r(el);
+					cont = false;
+				} else loop();
+			});
+		})();
+	});
