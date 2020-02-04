@@ -111,8 +111,7 @@ section {
 	scroll-snap-align: start;
 	/* scroll-padding-top: 100px; */
 	position: relative;
-	border: 1px solid sandybrown;
-
+	background-color: #000;
 }
 
 .show {
@@ -276,23 +275,30 @@ section {
 
 .decorators {
 	top: 0;
+	right: 0;
+	bottom: 0;
 	left: 0;
 }
 
 /* .decorator-rect {
 	top: -750px;
 	left: -480px;
-} */
+}
 
-.decorator-rect, .decorator-square {
+.decorator-square {
+	top: -680px;
+	left: 1080px;
+}
+
+/* .decorator-rect, .decorator-square {
 	top: 0;
 	left: 0;
-}
+} */
 
-.decorator-triangle {
+/* .decorator-triangle {
 	top: 330px;
 	left: 800px;
-}
+} */
 
 .about-us div.article:nth-child(1) {
 	flex: 2;
