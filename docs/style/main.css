@@ -339,6 +339,7 @@ section {
 		* Add 5rem: the size of the first item in services list
 	*/
 	margin: calc(((100vh - 31.2rem) / 2) + 5rem) 0;
+	height: 20rem;
 	overflow-y: auto;
 }
 
