@@ -10,19 +10,23 @@ if (!global.window) {
 	global.window = global.document = global.requestAnimationFrame = undefined;
 }
 
-const invalidate = o => {
-	for (const k in o) {
-		delete o[k];
+const invalidate = (cache, path, { recursive = false }) => {
+	if (!recursive) {
+		delete require.cache[path];
+	} else {
+		for (const key in cache) {
+			if (key.startsWith(path)) delete require.cache[key];
+		}
 	}
 };
 
 const render = require("mithril-node-render");
 const getTemplate = () => {
-	for (const key in require.cache) {
-		if (key.includes("src/markup")) delete require.cache[key];
-	}
-	invalidate(require.cache);
-	return require("../src/markup");
+	const markup = resolve(__dirname, "..", "src/markup");
+	invalidate(require.cache, markup, {
+		recursive: true,
+	});
+	return require(markup);
 };
 
 const debounce = t => f => {
@@ -37,7 +41,7 @@ const tryCatch = f => {
 	try {
 		f();
 	} catch (e) {
-		console.log(e);
+		console.error(e);
 	}
 };
 
