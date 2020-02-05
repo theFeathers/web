@@ -56,6 +56,8 @@ window.addEventListener("load", () => {
 		a.addEventListener("click", closeOffscreenNav),
 	);
 	q("#nav-closer").addEventListener("click", closeOffscreenNav);
+
+	/* RESIZE EVENTS */
 	window.addEventListener("resize", function() {
 		if (window.innerWidth >= 991) {
 			closeOffscreenNav();
@@ -74,7 +76,11 @@ window.addEventListener("load", () => {
 			openServiceDescription(e.currentTarget.id),
 		);
 	}, false);
-	if (window.innerWidth > 900) q("#service-1").classList.add("active-service");
+
+	if (window.innerWidth > 900) {
+		q("#service-1").classList.add("active-service");
+		q("#desc-service-1").classList.remove("hide");
+	}
 
 	q("#desc-closer").addEventListener("click", closeServiceDescription);
 	q(".fog").addEventListener("click", closeServiceDescription);

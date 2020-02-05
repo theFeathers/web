@@ -53,14 +53,17 @@ module.exports = section["#what-we-do.what-we-do"](
 	),
 	div.fog.hide["fade-out"](),
 	div.article["desc-wrapper"](
-		img["#nav-closer.desc-closer"]({
-			id: "desc-closer",
-			src: "/assets/images/cross.svg",
-			alt: "what-we-do description close button for mobile screen.",
-		}),
+		div["desc-closer-wrapper"](
+			img["#nav-closer.desc-closer"]({
+				id: "desc-closer",
+				src: "/assets/images/cross.svg",
+				alt: "what-we-do description close button for mobile screen.",
+			})
+		),
 		...services.map((service, id) =>
 			// hide all but first by default
-			div[`#desc-service-${id + 1}.service-desc${id === 0 ? "" : ".hide"}`](
+			// div[`#desc-service-${id + 1}.service-desc${id === 0 ? "" : ".hide"}`](
+			div[`#desc-service-${id + 1}.service-desc.hide`](
 				h3(service.name),
 				p["font-sm"](service.longDesc),
 			),
