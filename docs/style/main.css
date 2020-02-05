@@ -528,7 +528,7 @@ section {
 		left: 0;
 		right: 0;
 		/* transform: translateY(calc(50vh + 4rem)); */
-		transform: translateY(100vh);
+		transform: translateY(100%);
 		min-height: 50vh;
 		max-height: 100vh;
 		overflow-y: auto;
