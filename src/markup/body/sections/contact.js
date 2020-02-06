@@ -36,7 +36,10 @@ module.exports = section.contact["#contact"](
 			...formElems.map(([type, id, placeholder]) =>
 				input[`#${id}`]({ name: id.replace(/form-/, ""), type, placeholder }),
 			),
-			textarea["#form-description"]({ placeholder: "What's on your mind?" }),
+			textarea["#form-desc"]({
+				name: "desc",
+				placeholder: "What's on your mind?",
+			}),
 			button("Submit"),
 		),
 	),
