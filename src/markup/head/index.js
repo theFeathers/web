@@ -7,7 +7,7 @@ module.exports = ({ stylesheets }) =>
 		title("Feathers Studio"),
 		meta({ charset: "UTF-8" }),
 		meta({ name: "viewport", content: "width=device-width, initial-scale=1" }),
-		/* Last measure to prevent caching of HTML */
+		/* Last measure to prevent caching of HTML, you should do this on server as well */
 		meta({ "http-equiv": "expires", "content": "0" }),
 		link({
 			rel: "icon",
