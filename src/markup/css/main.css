@@ -1,7 +1,7 @@
 :root {
 	--primary-colour: #e20f37;
 	font-family: "Roboto", Arial, Helvetica, sans-serif;
-	font-size: 20px;
+	font-size: 16px;
 	color: #fff;
 }
 
@@ -326,7 +326,6 @@ section {
 }
 
 .service {
-	margin-bottom: 2rem;
 	cursor: pointer;
 }
 
@@ -627,8 +626,4 @@ section {
 	.detail > div:not(:last-child) {
 		margin-bottom: 1.5rem;
 	}
-}
-
-.font-sm {
-	font-size: 0.8rem;
 }

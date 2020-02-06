@@ -4,7 +4,6 @@ const { getPath } = require("../../util");
 const svg = require(getPath("src/markup/svg"));
 
 const paragraph = css`
-	font-size: 0.9rem;
 	max-width: 400px;
 	a {
 		color: inherit;
