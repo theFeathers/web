@@ -1,7 +1,7 @@
 const { section, div, p, a, h2 } = require("mithril-toolset").elements;
 const { css } = require("emotion");
 const { getPath } = require("../../util");
-const svg = require(getPath("src/svg"));
+const svg = require(getPath("src/markup/svg"));
 
 const x = css`
 	text-decoration: none;

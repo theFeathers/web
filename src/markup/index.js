@@ -18,28 +18,28 @@ const composeCSS = cache => {
 	return CSS;
 };
 
+const convertToFilename = name => `css/${name}.css`;
+
 const getFiles = CSS => [
-	createHash("md5")
-		.update(CSS)
-		.digest("hex")
-		.substr(0, 12) + ".css",
+	convertToFilename(
+		createHash("md5")
+			.update(CSS)
+			.digest("hex")
+			.substr(0, 12),
+	),
 	CSS,
 ];
 
 const stylesheets = [
-	getFiles(composeCSS(cache.inserted)),
+	["css/normalise.css", readFileSync(require.resolve("normalize.css"))],
+	getFiles(readFileSync(resolve(__dirname, "css/fonts.css"))),
 	getFiles(readFileSync(resolve(__dirname, "css/main.css"))),
-	["normalise.css", readFileSync(require.resolve("normalize.css"))],
+	getFiles(composeCSS(cache.inserted)),
 ];
 
 const page = m.fragment(
 	m.trust("<!DOCTYPE html>"),
-	html(
-		{ lang: "EN" },
-		head,
-		// head({ stylesheets }),
-		body,
-	),
+	html({ lang: "EN" }, head({ stylesheets }), body),
 );
 
 module.exports = {

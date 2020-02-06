@@ -44,12 +44,17 @@ const tryCatch = f => {
 	}
 };
 
+const outFolder = resolve(__dirname, "..", "docs");
+
 const bob = ({ watch = true }) => {
 	const build = () => (
 		console.log("Building src/markup..."),
 		tryCatch(() => {
-			const { html } = getTemplate();
-			writeFileSync(resolve(__dirname, "..", "docs/index.html"), html);
+			const { html, stylesheets } = getTemplate();
+			writeFileSync(resolve(outFolder, "index.html"), html);
+			stylesheets.forEach(([path, css]) =>
+				writeFileSync(resolve(outFolder, path), css),
+			);
 		})
 	);
 

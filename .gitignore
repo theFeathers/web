@@ -1,4 +1,5 @@
 node_modules
-docs/js/*
 pnpm-debug.log
-docs/index.html
+docs/*.html
+docs/js/*
+docs/css/*
