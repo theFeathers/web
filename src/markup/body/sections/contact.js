@@ -6,7 +6,6 @@ const {
 	textarea,
 	button,
 	form,
-	img,
 } = require("mithril-toolset").elements;
 
 const contact = [
@@ -33,8 +32,9 @@ module.exports = section.contact["#contact"](
 	),
 	div.article(
 		form["#contact-form.contact-form"](
+			{ action: "/submit", method: "POST" },
 			...formElems.map(([type, id, placeholder]) =>
-				input[`#${id}`]({ type, placeholder }),
+				input[`#${id}`]({ name: id.replace(/form-/, ""), type, placeholder }),
 			),
 			textarea["#form-description"]({ placeholder: "What's on your mind?" }),
 			button("Submit"),

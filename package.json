@@ -38,10 +38,13 @@
 		"strip-ansi": "^6.0.0"
 	},
 	"dependencies": {
+		"body-parser": "^1.19.0",
 		"emotion": "^10.0.27",
+		"express": "^4.17.1",
 		"lottie-web": "^5.6.2",
 		"mapbox-gl": "^1.7.0",
 		"normalize.css": "^8.0.1",
-		"ol": "^6.1.1"
+		"ol": "^6.1.1",
+		"telegraf": "^3.36.0"
 	}
 }

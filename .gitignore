@@ -3,3 +3,4 @@ pnpm-debug.log
 docs/*.html
 docs/js/*
 docs/css/*
+.config.js

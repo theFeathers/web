@@ -17,7 +17,7 @@ const invalidate = (pred, cache) => {
 	}
 };
 
-const getTemplate = () => {
+const getTemplates = () => {
 	const markup = resolve(__dirname, "..", "src/markup");
 	invalidate(test => !test.startsWith(__dirname), require.cache);
 	return require(markup);
@@ -45,16 +45,19 @@ const bob = ({ watch = true }) => {
 	const build = () => (
 		console.log("Building src/markup..."),
 		tryCatch(() => {
-			const { html, stylesheets } = getTemplate();
+			const { pages, stylesheets } = getTemplates();
 
 			// clean outDir
 			rm("-rf", resolve(outDir, "css"));
-			rm(resolve(outDir, "index.html"));
+			rm(outDir + "/*.html");
 
 			// create outDir for CSS
 			mkdir("-p", resolve(outDir, "css"));
 
-			writeFileSync(resolve(outDir, "index.html"), html);
+			pages.forEach(([path, html]) =>
+				writeFileSync(resolve(outDir, path), html),
+			);
+
 			stylesheets.forEach(([path, css]) =>
 				writeFileSync(resolve(outDir, path), css),
 			);
