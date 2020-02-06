@@ -20,7 +20,6 @@ const invalidate = (cache, path, { recursive = false }) => {
 	}
 };
 
-const render = require("mithril-node-render");
 const getTemplate = () => {
 	const markup = resolve(__dirname, "..", "src/markup");
 	invalidate(require.cache, markup, {
@@ -48,12 +47,10 @@ const tryCatch = f => {
 const bob = ({ watch = true }) => {
 	const build = () => (
 		console.log("Building src/markup..."),
-		tryCatch(() =>
-			writeFileSync(
-				resolve(__dirname, "..", "docs/index.html"),
-				render.sync(getTemplate()),
-			),
-		)
+		tryCatch(() => {
+			const { html } = getTemplate();
+			writeFileSync(resolve(__dirname, "..", "docs/index.html"), html);
+		})
 	);
 
 	if (watch) {
